@@ -1,0 +1,298 @@
+{
+  "samples": [
+    {
+      "category": "short_error",
+      "mode": "polsko1",
+      "normal_tokens": 72,
+      "terse_tokens": 24,
+      "savings_pct": 66.7
+    },
+    {
+      "category": "short_error",
+      "mode": "polsko2",
+      "normal_tokens": 72,
+      "terse_tokens": 24,
+      "savings_pct": 66.7
+    },
+    {
+      "category": "short_error",
+      "mode": "polsko3",
+      "normal_tokens": 72,
+      "terse_tokens": 12,
+      "savings_pct": 83.3
+    },
+    {
+      "category": "short_error",
+      "mode": "suwalsko1",
+      "normal_tokens": 72,
+      "terse_tokens": 27,
+      "savings_pct": 62.5
+    },
+    {
+      "category": "short_error",
+      "mode": "suwalsko2",
+      "normal_tokens": 72,
+      "terse_tokens": 29,
+      "savings_pct": 59.7
+    },
+    {
+      "category": "short_error",
+      "mode": "suwalsko3",
+      "normal_tokens": 72,
+      "terse_tokens": 34,
+      "savings_pct": 52.8
+    },
+    {
+      "category": "short_error",
+      "mode": "terse-en",
+      "normal_tokens": 72,
+      "terse_tokens": 13,
+      "savings_pct": 81.9
+    },
+    {
+      "category": "short_notfound",
+      "mode": "polsko1",
+      "normal_tokens": 66,
+      "terse_tokens": 27,
+      "savings_pct": 59.1
+    },
+    {
+      "category": "short_notfound",
+      "mode": "polsko2",
+      "normal_tokens": 66,
+      "terse_tokens": 26,
+      "savings_pct": 60.6
+    },
+    {
+      "category": "short_notfound",
+      "mode": "polsko3",
+      "normal_tokens": 66,
+      "terse_tokens": 11,
+      "savings_pct": 83.3
+    },
+    {
+      "category": "short_notfound",
+      "mode": "suwalsko1",
+      "normal_tokens": 66,
+      "terse_tokens": 23,
+      "savings_pct": 65.2
+    },
+    {
+      "category": "short_notfound",
+      "mode": "suwalsko2",
+      "normal_tokens": 66,
+      "terse_tokens": 32,
+      "savings_pct": 51.5
+    },
+    {
+      "category": "short_notfound",
+      "mode": "suwalsko3",
+      "normal_tokens": 66,
+      "terse_tokens": 38,
+      "savings_pct": 42.4
+    },
+    {
+      "category": "short_notfound",
+      "mode": "terse-en",
+      "normal_tokens": 66,
+      "terse_tokens": 17,
+      "savings_pct": 74.2
+    },
+    {
+      "category": "mid_explain",
+      "mode": "polsko1",
+      "normal_tokens": 118,
+      "terse_tokens": 49,
+      "savings_pct": 58.5
+    },
+    {
+      "category": "mid_explain",
+      "mode": "polsko2",
+      "normal_tokens": 118,
+      "terse_tokens": 47,
+      "savings_pct": 60.2
+    },
+    {
+      "category": "mid_explain",
+      "mode": "polsko3",
+      "normal_tokens": 118,
+      "terse_tokens": 27,
+      "savings_pct": 77.1
+    },
+    {
+      "category": "mid_explain",
+      "mode": "suwalsko1",
+      "normal_tokens": 118,
+      "terse_tokens": 47,
+      "savings_pct": 60.2
+    },
+    {
+      "category": "mid_explain",
+      "mode": "suwalsko2",
+      "normal_tokens": 118,
+      "terse_tokens": 55,
+      "savings_pct": 53.4
+    },
+    {
+      "category": "mid_explain",
+      "mode": "suwalsko3",
+      "normal_tokens": 118,
+      "terse_tokens": 76,
+      "savings_pct": 35.6
+    },
+    {
+      "category": "mid_explain",
+      "mode": "terse-en",
+      "normal_tokens": 118,
+      "terse_tokens": 41,
+      "savings_pct": 65.3
+    },
+    {
+      "category": "mid_install",
+      "mode": "polsko1",
+      "normal_tokens": 151,
+      "terse_tokens": 57,
+      "savings_pct": 62.3
+    },
+    {
+      "category": "mid_install",
+      "mode": "polsko2",
+      "normal_tokens": 151,
+      "terse_tokens": 48,
+      "savings_pct": 68.2
+    },
+    {
+      "category": "mid_install",
+      "mode": "polsko3",
+      "normal_tokens": 151,
+      "terse_tokens": 38,
+      "savings_pct": 74.8
+    },
+    {
+      "category": "mid_install",
+      "mode": "suwalsko1",
+      "normal_tokens": 151,
+      "terse_tokens": 63,
+      "savings_pct": 58.3
+    },
+    {
+      "category": "mid_install",
+      "mode": "suwalsko2",
+      "normal_tokens": 151,
+      "terse_tokens": 62,
+      "savings_pct": 58.9
+    },
+    {
+      "category": "mid_install",
+      "mode": "suwalsko3",
+      "normal_tokens": 151,
+      "terse_tokens": 82,
+      "savings_pct": 45.7
+    },
+    {
+      "category": "mid_install",
+      "mode": "terse-en",
+      "normal_tokens": 151,
+      "terse_tokens": 45,
+      "savings_pct": 70.2
+    },
+    {
+      "category": "long_review",
+      "mode": "polsko1",
+      "normal_tokens": 259,
+      "terse_tokens": 124,
+      "savings_pct": 52.1
+    },
+    {
+      "category": "long_review",
+      "mode": "polsko2",
+      "normal_tokens": 259,
+      "terse_tokens": 85,
+      "savings_pct": 67.2
+    },
+    {
+      "category": "long_review",
+      "mode": "polsko3",
+      "normal_tokens": 259,
+      "terse_tokens": 53,
+      "savings_pct": 79.5
+    },
+    {
+      "category": "long_review",
+      "mode": "suwalsko1",
+      "normal_tokens": 259,
+      "terse_tokens": 111,
+      "savings_pct": 57.1
+    },
+    {
+      "category": "long_review",
+      "mode": "suwalsko2",
+      "normal_tokens": 259,
+      "terse_tokens": 111,
+      "savings_pct": 57.1
+    },
+    {
+      "category": "long_review",
+      "mode": "suwalsko3",
+      "normal_tokens": 259,
+      "terse_tokens": 164,
+      "savings_pct": 36.7
+    },
+    {
+      "category": "long_review",
+      "mode": "terse-en",
+      "normal_tokens": 259,
+      "terse_tokens": 88,
+      "savings_pct": 66.0
+    },
+    {
+      "category": "long_arch",
+      "mode": "polsko1",
+      "normal_tokens": 251,
+      "terse_tokens": 131,
+      "savings_pct": 47.8
+    },
+    {
+      "category": "long_arch",
+      "mode": "polsko2",
+      "normal_tokens": 251,
+      "terse_tokens": 96,
+      "savings_pct": 61.8
+    },
+    {
+      "category": "long_arch",
+      "mode": "polsko3",
+      "normal_tokens": 251,
+      "terse_tokens": 41,
+      "savings_pct": 83.7
+    },
+    {
+      "category": "long_arch",
+      "mode": "suwalsko1",
+      "normal_tokens": 251,
+      "terse_tokens": 120,
+      "savings_pct": 52.2
+    },
+    {
+      "category": "long_arch",
+      "mode": "suwalsko2",
+      "normal_tokens": 251,
+      "terse_tokens": 111,
+      "savings_pct": 55.8
+    },
+    {
+      "category": "long_arch",
+      "mode": "suwalsko3",
+      "normal_tokens": 251,
+      "terse_tokens": 150,
+      "savings_pct": 40.2
+    },
+    {
+      "category": "long_arch",
+      "mode": "terse-en",
+      "normal_tokens": 251,
+      "terse_tokens": 99,
+      "savings_pct": 60.6
+    }
+  ]
+}

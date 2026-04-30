@@ -9,12 +9,12 @@ Klaudiusz może pracować w kilku trybach.
 
 | Tryb | Styl | Oszczędność tokenów |
 |------|------|---------------------|
-| `polsko 1` | Lekko zwięzły | ~20% |
-| `polsko 2` | Telegraficzny | ~40% |
-| `polsko 3` | Minimalistyczny | ~60% |
-| `suwalsko 1` | Polski + lekkie wtrącenia z gwary | ~10% |
-| `suwalsko 2` | Wyraźna gwara — dialekt w połowie słów | ~15% |
-| `suwalsko 3` | Pełna gwara suwalska — autentyczny dialekt | vibes 🍺 |
+| `polsko 1` | Lekko zwięzły | ~58% |
+| `polsko 2` | Telegraficzny | ~64% |
+| `polsko 3` | Minimalistyczny | ~80% |
+| `suwalsko 1` | Polski + lekkie wtrącenia z gwary | ~59% |
+| `suwalsko 2` | Wyraźna gwara — dialekt w połowie słów | ~56% |
+| `suwalsko 3` | Pełna gwara suwalska — autentyczny dialekt | ~42% 🍺 |
 
 ## Użycie
 

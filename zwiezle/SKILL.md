@@ -29,16 +29,16 @@ poziom:  1 · 2 · 3
 
 | Tryb + Poziom | Styl | Oszczędność tokenów |
 |---------------|------|---------------------|
-| `polsko 1`    | Lekko zwięzły — krótsze zdania, bez grzeczności | ~20% |
-| `polsko 2`    | Telegraficzny — SMS, pkt, zero fillery | ~40% |
-| `polsko 3`    | Minimalistyczny — prawie keyword-style | ~60% |
-| `suwalsko 1`  | Polski + lekkie wtrącenia z gwary | ~10% |
-| `suwalsko 2`  | Wyraźna gwara — dialekt w ~połowie słów | ~15% |
-| `suwalsko 3`  | Pełna gwara suwalska — autentyczny dialekt | ~5%* |
-| `terse-en`    | (sub-agenci) Angielski telegraficzny — bullets, file:line, symbole | ~36% raportów |
+| `polsko 1`    | Lekko zwięzły — krótsze zdania, bez grzeczności | ~58% |
+| `polsko 2`    | Telegraficzny — SMS, pkt, zero fillery | ~64% |
+| `polsko 3`    | Minimalistyczny — prawie keyword-style | ~80% |
+| `suwalsko 1`  | Polski + lekkie wtrącenia z gwary | ~59% |
+| `suwalsko 2`  | Wyraźna gwara — dialekt w ~połowie słów | ~56% |
+| `suwalsko 3`  | Pełna gwara suwalska — autentyczny dialekt | ~42%* |
+| `terse-en`    | (sub-agenci) Angielski telegraficzny — bullets, file:line, symbole | ~70% raportów |
 
-\* gwara suwalska **nie oszczędza** tokenów (rzadkie słowa = więcej subtokenów BPE),
-ale daje unikalny klimat. Używaj dla vibes, nie dla wydajności.
+\* gwara suwalska oszczędza mniej tokenów (rzadkie słowa = więcej subtokenów BPE),
+ale daje unikalny klimat. Pomiar: `benchmark/` (tokenizer o200k_base, 42 próbki).
 
 ## Procedura
 
