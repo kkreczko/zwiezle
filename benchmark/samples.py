@@ -1,6 +1,6 @@
 """
 Hardcoded próbki odpowiedzi: normalna (verbose) vs każdy tryb zwięźle.
-6 kategorii × 7 trybów = 42 pary.
+6 kategorii × 10 trybów = 60 par.
 """
 
 # Każda próbka: (category, mode, normal_text, terse_text)
@@ -637,5 +637,288 @@ SAMPLES: list[tuple[str, str, str, str]] = [
         "- Sessions: Redis (TTL = token lifetime)\n\n"
         "Flow: Req→AuthMiddleware→TokenService→UserRepo→Redis/PG\n"
         "Config: `config/auth.py` (env vars at startup). Invalid token → 401.",
+    ),
+
+    # =========================================================================
+    # KASZEBSKO — 6 kategorii × 3 poziomy = 18 próbek
+    # =========================================================================
+
+    # --- short_error ---
+    (
+        "short_error",
+        "kaszebsko1",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Jo, błąd kompilacji w main.cpp:42 — nié ma średnika. Dodaj i przekompiluj.",
+    ),
+    (
+        "short_error",
+        "kaszebsko2",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Komp. nié pòszła — `main.cpp:42` felëje `;`. Mùszi dodac dy rekòmp.",
+    ),
+    (
+        "short_error",
+        "kaszebsko3",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Zdrzëj — fela na `main.cpp:42`. Felëje `;`, doch ón nié skòmpilëje bez tegò. Le dodac ë bãdze bëlno.",
+    ),
+
+    # --- short_notfound ---
+    (
+        "short_notfound",
+        "kaszebsko1",
+        "Niestety, ten plik konfiguracyjny nie istnieje w podanej lokalizacji. "
+        "Sprawdziłem katalog /etc/app/ i nie znalazłem pliku config.yaml. "
+        "Możliwe, że ścieżka jest nieprawidłowa lub plik nie został jeszcze utworzony.",
+        "Nié ma config.yaml w /etc/app/. Sprawdź ścieżkę albo utwórz plik.",
+    ),
+    (
+        "short_notfound",
+        "kaszebsko2",
+        "Niestety, ten plik konfiguracyjny nie istnieje w podanej lokalizacji. "
+        "Sprawdziłem katalog /etc/app/ i nie znalazłem pliku config.yaml. "
+        "Możliwe, że ścieżka jest nieprawidłowa lub plik nie został jeszcze utworzony.",
+        "Zdrzëj — `config.yaml` nié sedzë w `/etc/app/`. Lëbò ścéżka złô, lëbò mùszi zrobic.",
+    ),
+    (
+        "short_notfound",
+        "kaszebsko3",
+        "Niestety, ten plik konfiguracyjny nie istnieje w podanej lokalizacji. "
+        "Sprawdziłem katalog /etc/app/ i nie znalazłem pliku config.yaml. "
+        "Możliwe, że ścieżka jest nieprawidłowa lub plik nie został jeszcze utworzony.",
+        "Nu, `config.yaml` — nika nié nalôzł w `/etc/app/`. Doch felëje! Lëbò ścéżka nié ta, "
+        "lëbò jesz nié zrobiony. Mùszi sã rozezdrzëc.",
+    ),
+
+    # --- mid_explain ---
+    (
+        "mid_explain",
+        "kaszebsko1",
+        "Znalazłem problem w Twoim kodzie. Na linii 15 pliku utils.py używasz zmiennej count, "
+        "która jest deklarowana na linii 10, ale nigdy nie otrzymuje wartości początkowej przed "
+        "jej użyciem w pętli for. To powoduje, że Python zgłasza UnboundLocalError, ponieważ "
+        "zmienna istnieje w lokalnym scope funkcji, ale nie ma przypisanej wartości. "
+        "Rozwiązaniem jest dodanie inicjalizacji count = 0 przed pętlą na linii 10.",
+        "Problem w utils.py:15 — count nié ma wartości początkowej. "
+        "Deklaracja na L10 bez init → UnboundLocalError. "
+        "Dodaj count = 0 przed pętlą, bëlno będzie.",
+    ),
+    (
+        "mid_explain",
+        "kaszebsko2",
+        "Znalazłem problem w Twoim kodzie. Na linii 15 pliku utils.py używasz zmiennej count, "
+        "która jest deklarowana na linii 10, ale nigdy nie otrzymuje wartości początkowej przed "
+        "jej użyciem w pętli for. To powoduje, że Python zgłasza UnboundLocalError, ponieważ "
+        "zmienna istnieje w lokalnym scope funkcji, ale nie ma przypisanej wartości. "
+        "Rozwiązaniem jest dodanie inicjalizacji count = 0 przed pętlą na linii 10.",
+        "Zdrzëj — biéda w `utils.py:15`. Zm. `count` na L10 deklarowônô, ale bez wartoscë, "
+        "dy lecë `UnboundLocalError`. Mùszi dopisac `count = 0` przed pãtlą.",
+    ),
+    (
+        "mid_explain",
+        "kaszebsko3",
+        "Znalazłem problem w Twoim kodzie. Na linii 15 pliku utils.py używasz zmiennej count, "
+        "która jest deklarowana na linii 10, ale nigdy nie otrzymuje wartości początkowej przed "
+        "jej użyciem w pętli for. To powoduje, że Python zgłasza UnboundLocalError, ponieważ "
+        "zmienna istnieje w lokalnym scope funkcji, ale nie ma przypisanej wartości. "
+        "Rozwiązaniem jest dodanie inicjalizacji count = 0 przed pętlą na linii 10.",
+        "Nu, zdrzëj co sã dzëje — `utils.py:15` wiele biédë. Ón tam `count` brëkùje a òna "
+        "nié dostała nigdë wartoscë, doch na L10 le deklaracëjô bez niczegò. Przez to lecë "
+        "`UnboundLocalError`. Le dopisac `count = 0` przed pãtlą ë bãdze bëlno.",
+    ),
+
+    # --- mid_install ---
+    (
+        "mid_install",
+        "kaszebsko1",
+        "Aby zainstalować tę aplikację, musisz wykonać następujące kroki. Po pierwsze, "
+        "upewnij się, że masz zainstalowany Python w wersji 3.10 lub wyższej. Następnie "
+        "sklonuj repozytorium za pomocą komendy git clone. Potem przejdź do katalogu projektu "
+        "i utwórz wirtualne środowisko za pomocą python -m venv .venv. Aktywuj środowisko "
+        "za pomocą source .venv/bin/activate. Na końcu zainstaluj zależności komendą "
+        "pip install -r requirements.txt. Po tych krokach aplikacja powinna być gotowa do uruchomienia.",
+        "Mùszi mieć Python >= 3.10. Jo i lecim:\n"
+        "1. git clone <repo>\n"
+        "2. cd <project>\n"
+        "3. python -m venv .venv\n"
+        "4. source .venv/bin/activate\n"
+        "5. pip install -r requirements.txt\n"
+        "Terô gotowe.",
+    ),
+    (
+        "mid_install",
+        "kaszebsko2",
+        "Aby zainstalować tę aplikację, musisz wykonać następujące kroki. Po pierwsze, "
+        "upewnij się, że masz zainstalowany Python w wersji 3.10 lub wyższej. Następnie "
+        "sklonuj repozytorium za pomocą komendy git clone. Potem przejdź do katalogu projektu "
+        "i utwórz wirtualne środowisko za pomocą python -m venv .venv. Aktywuj środowisko "
+        "za pomocą source .venv/bin/activate. Na końcu zainstaluj zależności komendą "
+        "pip install -r requirements.txt. Po tych krokach aplikacja powinna być gotowa do uruchomienia.",
+        "Mùszi Python>=3.10. Terô lecymë:\n"
+        "- `git clone` dy `cd` do kat.\n"
+        "- `python -m venv .venv` → `source .venv/bin/activate`\n"
+        "- `pip install -r requirements.txt`\n"
+        "Bëlno, gòtowé.",
+    ),
+    (
+        "mid_install",
+        "kaszebsko3",
+        "Aby zainstalować tę aplikację, musisz wykonać następujące kroki. Po pierwsze, "
+        "upewnij się, że masz zainstalowany Python w wersji 3.10 lub wyższej. Następnie "
+        "sklonuj repozytorium za pomocą komendy git clone. Potem przejdź do katalogu projektu "
+        "i utwórz wirtualne środowisko za pomocą python -m venv .venv. Aktywuj środowisko "
+        "za pomocą source .venv/bin/activate. Na końcu zainstaluj zależności komendą "
+        "pip install -r requirements.txt. Po tych krokach aplikacja powinna być gotowa do uruchomienia.",
+        "Pierszô rzecz — zdrzëj czë Python>=3.10 sedzë. Jo? Tej lecymë:\n"
+        "- `git clone` ë jisc do kat. projektu\n"
+        "- `python -m venv .venv` — niech zrobië venv\n"
+        "- `source .venv/bin/activate` dy `pip install -r requirements.txt`\n"
+        "Terô wszytkò gòtowé, mòżesz òdpalëc.",
+    ),
+
+    # --- long_review ---
+    (
+        "long_review",
+        "kaszebsko1",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "Przegląd PR — jo, jest 5 problemów:\n\n"
+        "1. auth.py:23 — JWT bez expiration. Nié bëlno z bezpieczeństwem.\n"
+        "2. database.py:45 — SQL konkatenacją, groźba injection.\n"
+        "3. routes.py:67 — nié ma walidacji email.\n"
+        "4. test_auth.py — le happy path, nié ma edge cases.\n"
+        "5. config.py:12 — hasło do bazy w kodzie. Wynieś do env.\n\n"
+        "Mùszi poprawić przed merge.",
+    ),
+    (
+        "long_review",
+        "kaszebsko2",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "Zdrzëj na PR — wiele biédë:\n"
+        "- `auth.py:23` JWT bez exp → token wieczny, nié bëlno 🔓\n"
+        "- `database.py:45` SQL sklejóny (kònkatenacëjô) → injection\n"
+        "- `routes.py:67` felëje walidacëji email\n"
+        "- `test_auth.py` le happy path, nika wicy\n"
+        "- `config.py:12` hasło w repo 🔓\n"
+        "Mùszi pòprawic, nié pùscymë dalij.",
+    ),
+    (
+        "long_review",
+        "kaszebsko3",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "Nu, zdrzëj na to — baro wiele biédë z tim PR:\n"
+        "- `auth.py:23` — ón JWT robië bez exp, dy token wieczno żëje. Czemù?!\n"
+        "- `database.py:45` — SQL sklejóny jak lëchò, nié sparametryzowóny. Injection gòtowy.\n"
+        "- `routes.py:67` — email lecë bez sprôwdzeniô, doch mùszi walidowac!\n"
+        "- `test_auth.py` — le redosnô ścéżka, nika cãżkégò nié testëje\n"
+        "- `config.py:12` — hasło do bazë sedzë prosto w repo, mùszi do env wëcygnąc\n"
+        "Nika z tegò nié pùscymë dalij, mùszi pòprawic.",
+    ),
+
+    # --- long_arch ---
+    (
+        "long_arch",
+        "kaszebsko1",
+        "Moduł autentykacji w tej aplikacji składa się z kilku warstw. Na najwyższym poziomie "
+        "mamy middleware AuthMiddleware zdefiniowany w pliku middleware/auth.py, który przechwytuje "
+        "każde żądanie HTTP i sprawdza obecność tokenu w nagłówku Authorization. Token jest "
+        "przekazywany do serwisu TokenService w pliku services/token.py, który weryfikuje jego "
+        "ważność, sprawdza podpis i dekoduje payload. Jeśli token jest poprawny, serwis zwraca "
+        "obiekt User, który jest dołączany do kontekstu żądania. W przypadku niepoprawnego tokenu "
+        "middleware zwraca odpowiedź 401 Unauthorized. Warstwa persystencji znajduje się w "
+        "repositories/user_repo.py i używa SQLAlchemy do komunikacji z bazą PostgreSQL. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Moduł auth — jo, kilka warstw:\n\n"
+        "1. middleware/auth.py — AuthMiddleware łapie requesty, sprawdza token.\n"
+        "2. services/token.py — TokenService weryfikuje podpis, dekoduje, zwraca User.\n"
+        "3. repositories/user_repo.py — SQLAlchemy + PostgreSQL.\n"
+        "4. Sesje trzymane w Redis (TTL = życie tokenu).\n\n"
+        "Flow: Request → Middleware → TokenService → UserRepo → Redis/PG.\n"
+        "Klucze JWT w config/auth.py, z env vars. Jak nié pasuje token — 401.",
+    ),
+    (
+        "long_arch",
+        "kaszebsko2",
+        "Moduł autentykacji w tej aplikacji składa się z kilku warstw. Na najwyższym poziomie "
+        "mamy middleware AuthMiddleware zdefiniowany w pliku middleware/auth.py, który przechwytuje "
+        "każde żądanie HTTP i sprawdza obecność tokenu w nagłówku Authorization. Token jest "
+        "przekazywany do serwisu TokenService w pliku services/token.py, który weryfikuje jego "
+        "ważność, sprawdza podpis i dekoduje payload. Jeśli token jest poprawny, serwis zwraca "
+        "obiekt User, który jest dołączany do kontekstu żądania. W przypadku niepoprawnego tokenu "
+        "middleware zwraca odpowiedź 401 Unauthorized. Warstwa persystencji znajduje się w "
+        "repositories/user_repo.py i używa SQLAlchemy do komunikacji z bazą PostgreSQL. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Zdrzëj jak auth dzëjô — warstwë:\n"
+        "- `middleware/auth.py` → łapie req, cygnie token z header\n"
+        "- `services/token.py` → sprôwdzô pòdpis, dekòdëje, dôwô User\n"
+        "- `repositories/user_repo.py` → SQLAlchemy+PG\n"
+        "- Sesjë w Redis, TTL jak token żëje\n\n"
+        "Flow: Req→Middleware→TokenSvc→Repo→Redis/PG\n"
+        "Kònf. klëczów: `config/auth.py` (z env). Nié pasëje → 401.",
+    ),
+    (
+        "long_arch",
+        "kaszebsko3",
+        "Moduł autentykacji w tej aplikacji składa się z kilku warstw. Na najwyższym poziomie "
+        "mamy middleware AuthMiddleware zdefiniowany w pliku middleware/auth.py, który przechwytuje "
+        "każde żądanie HTTP i sprawdza obecność tokenu w nagłówku Authorization. Token jest "
+        "przekazywany do serwisu TokenService w pliku services/token.py, który weryfikuje jego "
+        "ważność, sprawdza podpis i dekoduje payload. Jeśli token jest poprawny, serwis zwraca "
+        "obiekt User, który jest dołączany do kontekstu żądania. W przypadku niepoprawnego tokenu "
+        "middleware zwraca odpowiedź 401 Unauthorized. Warstwa persystencji znajduje się w "
+        "repositories/user_repo.py i używa SQLAlchemy do komunikacji z bazą PostgreSQL. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Nu, zdrzëj jak to wszytkò dzëjô — auth mô pôrã warstwów:\n"
+        "- `middleware/auth.py` — ón łapie kòżdi req dy cygnie token z Authorization header\n"
+        "- `services/token.py` — tuwò TokenService zdrzë na pòdpis, dekòdëje dy dôwô User nazôd\n"
+        "- `repositories/user_repo.py` — SQLAlchemy gôdô z PostgreSQL\n"
+        "- Sesjë sedzą w Redis, TTL taczi jak token żëje\n\n"
+        "Całé to lecë: Req→Middleware→TokenSvc→UserRepo→Redis/PG\n"
+        "Klëcze JWT w `config/auth.py`, cygniãté z env przë sztarce. "
+        "Jak token nié pasëje — 401 dy kùńc.",
     ),
 ]

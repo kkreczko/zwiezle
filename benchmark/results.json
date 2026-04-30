@@ -293,6 +293,132 @@
       "normal_tokens": 251,
       "terse_tokens": 99,
       "savings_pct": 60.6
+    },
+    {
+      "category": "short_error",
+      "mode": "kaszebsko1",
+      "normal_tokens": 72,
+      "terse_tokens": 28,
+      "savings_pct": 61.1
+    },
+    {
+      "category": "short_error",
+      "mode": "kaszebsko2",
+      "normal_tokens": 72,
+      "terse_tokens": 32,
+      "savings_pct": 55.6
+    },
+    {
+      "category": "short_error",
+      "mode": "kaszebsko3",
+      "normal_tokens": 72,
+      "terse_tokens": 45,
+      "savings_pct": 37.5
+    },
+    {
+      "category": "short_notfound",
+      "mode": "kaszebsko1",
+      "normal_tokens": 66,
+      "terse_tokens": 25,
+      "savings_pct": 62.1
+    },
+    {
+      "category": "short_notfound",
+      "mode": "kaszebsko2",
+      "normal_tokens": 66,
+      "terse_tokens": 44,
+      "savings_pct": 33.3
+    },
+    {
+      "category": "short_notfound",
+      "mode": "kaszebsko3",
+      "normal_tokens": 66,
+      "terse_tokens": 63,
+      "savings_pct": 4.5
+    },
+    {
+      "category": "mid_explain",
+      "mode": "kaszebsko1",
+      "normal_tokens": 118,
+      "terse_tokens": 48,
+      "savings_pct": 59.3
+    },
+    {
+      "category": "mid_explain",
+      "mode": "kaszebsko2",
+      "normal_tokens": 118,
+      "terse_tokens": 64,
+      "savings_pct": 45.8
+    },
+    {
+      "category": "mid_explain",
+      "mode": "kaszebsko3",
+      "normal_tokens": 118,
+      "terse_tokens": 98,
+      "savings_pct": 16.9
+    },
+    {
+      "category": "mid_install",
+      "mode": "kaszebsko1",
+      "normal_tokens": 151,
+      "terse_tokens": 65,
+      "savings_pct": 57.0
+    },
+    {
+      "category": "mid_install",
+      "mode": "kaszebsko2",
+      "normal_tokens": 151,
+      "terse_tokens": 67,
+      "savings_pct": 55.6
+    },
+    {
+      "category": "mid_install",
+      "mode": "kaszebsko3",
+      "normal_tokens": 151,
+      "terse_tokens": 100,
+      "savings_pct": 33.8
+    },
+    {
+      "category": "long_review",
+      "mode": "kaszebsko1",
+      "normal_tokens": 259,
+      "terse_tokens": 114,
+      "savings_pct": 56.0
+    },
+    {
+      "category": "long_review",
+      "mode": "kaszebsko2",
+      "normal_tokens": 259,
+      "terse_tokens": 125,
+      "savings_pct": 51.7
+    },
+    {
+      "category": "long_review",
+      "mode": "kaszebsko3",
+      "normal_tokens": 259,
+      "terse_tokens": 195,
+      "savings_pct": 24.7
+    },
+    {
+      "category": "long_arch",
+      "mode": "kaszebsko1",
+      "normal_tokens": 251,
+      "terse_tokens": 121,
+      "savings_pct": 51.8
+    },
+    {
+      "category": "long_arch",
+      "mode": "kaszebsko2",
+      "normal_tokens": 251,
+      "terse_tokens": 128,
+      "savings_pct": 49.0
+    },
+    {
+      "category": "long_arch",
+      "mode": "kaszebsko3",
+      "normal_tokens": 251,
+      "terse_tokens": 177,
+      "savings_pct": 29.5
     }
   ]
 }

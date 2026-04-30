@@ -15,6 +15,9 @@ Klaudiusz może pracować w kilku trybach.
 | `suwalsko 1` | Polski + lekkie wtrącenia z gwary | ~59% |
 | `suwalsko 2` | Wyraźna gwara — dialekt w połowie słów | ~56% |
 | `suwalsko 3` | Pełna gwara suwalska — autentyczny dialekt | ~42% 🍺 |
+| `kaszebsko 1` | Polski + lekkie wtrącenia kaszubskie | ~58% |
+| `kaszebsko 2` | Wyraźny kaszubski — kaszëbskô mòwa | ~49% |
+| `kaszebsko 3` | Pełny kaszubski | ~25% 🐟 |
 
 ## Użycie
 

@@ -1,7 +1,7 @@
 ---
 name: zwiezle
-description: "Przełącz agenta na zwięzły polski. Tryb 'polsko' (telegraficzny, zero fillery) lub 'suwalsko' (gwara suwalska). Każdy tryb ma 3 poziomy intensywności."
-argument-hint: "'polsko 2' lub 'suwalsko 3' — tryb + poziom (1-3)"
+description: "Przełącz agenta na zwięzły polski. Tryb 'polsko' (telegraficzny), 'suwalsko' (gwara suwalska) lub 'kaszebsko' (język kaszubski). Każdy tryb ma 3 poziomy intensywności."
+argument-hint: "'polsko 2' lub 'suwalsko 3' lub 'kaszebsko 1' — tryb + poziom (1-3)"
 ---
 
 # Zwięźle — Polski Tryb Oszczędzania Tokenów
@@ -23,7 +23,7 @@ stylistyczne, każdy z trzema poziomami intensywności.
 ```
 /zwiezle <tryb> <poziom>
 
-tryb:    polsko  │  suwalsko
+tryb:    polsko  │  suwalsko  │  kaszebsko
 poziom:  1 · 2 · 3
 ```
 
@@ -35,24 +35,27 @@ poziom:  1 · 2 · 3
 | `suwalsko 1`  | Polski + lekkie wtrącenia z gwary | ~59% |
 | `suwalsko 2`  | Wyraźna gwara — dialekt w ~połowie słów | ~56% |
 | `suwalsko 3`  | Pełna gwara suwalska — autentyczny dialekt | ~42%* |
+| `kaszebsko 1` | Polski + lekkie wtrącenia kaszubskie | ~58% |
+| `kaszebsko 2` | Wyraźny kaszubski — ~połowa słów w kaszëbsczim | ~49% |
+| `kaszebsko 3` | Pełny kaszubski — kaszëbskô mòwa | ~25%* |
 | `terse-en`    | (sub-agenci) Angielski telegraficzny — bullets, file:line, symbole | ~70% raportów |
 
-\* gwara suwalska oszczędza mniej tokenów (rzadkie słowa = więcej subtokenów BPE),
-ale daje unikalny klimat. Pomiar: `benchmark/` (tokenizer o200k_base, 42 próbki).
+\* gwara suwalska i pełny kaszubski oszczędzają mniej tokenów (rzadkie słowa i diakrytyki = więcej
+subtokenów BPE), ale dają unikalny klimat. Pomiar: `benchmark/` (tokenizer o200k_base, 60 próbek).
 
 ## Procedura
 
 ### Krok 1: Parsuj argumenty
 
 Wyciągnij z komendy użytkownika:
-- **tryb**: `polsko` lub `suwalsko`
+- **tryb**: `polsko`, `suwalsko` lub `kaszebsko`
 - **poziom**: `1`, `2` lub `3` (domyślnie `2` jeśli nie podano)
 
 Jeśli użytkownik poda sam tryb bez poziomu (np. `/zwiezle polsko`),
 użyj poziomu 2 jako domyślnego.
 
 Jeśli użytkownik poda samo `/zwiezle` bez argumentów, zapytaj:
-> Jaki tryb? `polsko` czy `suwalsko`? I jaki poziom (1-3)?
+> Jaki tryb? `polsko`, `suwalsko` czy `kaszebsko`? I jaki poziom (1-3)?
 
 ### Krok 2: Zastosuj styl
 
@@ -229,6 +232,102 @@ suwalsko 2: "Komp. ni poszła. Trza dodać dep. `libfoo`. Kuknij na `CMakeLists.
 
 Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy. To powoduje wyjątek NullPointerException w dalszym kodzie. Trzeba zmienić return null na return []."
 suwalsko 3: "Nu, kuknij — bieda na L42. Óna zwraca `null` a trza `[]`. Przez to dalij léci NullPointer. Jeno zmienić `return null` → `return []` dy będzie dobrza."
+
+---
+
+## Tryb: KASZEBSKO
+
+### Kontekst: Język kaszubski
+
+Kaszubski (kaszëbsczi jãzëk) — jedyny oficjalny język regionalny w Polsce,
+używany na Pomorzu (Kaszuby). Język zachodniosłowiański z grupy lechickiej,
+z wpływami dolnoniemieckimi. Ok. 87 tys. użytkowników. Ma własny alfabet
+z charakterystycznymi literami: ë, ò, ã, ô, ù, é.
+
+### Słownik podstawowy
+
+| Polski | Kaszubski | Użycie |
+|--------|-----------|--------|
+| tak | jo | "Jo, to dzëjô" |
+| nie | nié | "Nié dzëjô" |
+| co | co | "Co to za fela?" |
+| kto | chto | "Chto to pisôł?" |
+| jak | jak | "Jak to naprawic?" |
+| dobrze | bëlno | "Bëlno, lecymë dalij" |
+| tutaj | tuwò | "Tuwò je fela" |
+| teraz | terô | "Terô zdrzëmë" |
+| patrz | zdrzëj | "Zdrzëj na L42" |
+| trzeba | mùszi / trza | "Mùszi dodac dep." |
+| mówię | gôdóm | "Gôdóm — felëje dep." |
+| dlaczego | czemù | "Czemù segfault?" |
+| dużo | wiele | "Wiele zmianów" |
+| mały | môłi | "Môłi fix" |
+| problem/błąd | biéda / fela | "Fela w konf." |
+| brakuje | felëje | "Felëje dep." |
+| szukać | szëkac | "Szëkac w src/" |
+| zrobić | zrobic | "Zrobic refactor" |
+| tylko | le | "Le tuwò zmienic" |
+| przecież | doch | "Doch to nié dzëjô" |
+| iść | jisc | "Jisc do kat. src/" |
+| on | ón | "Ón tu nié pasëje" |
+| ona | òna | "Òna wrôcô null" |
+| dużo | wiele | "Wiele zmianów" |
+| bardzo | baro | "Baro dłudżi build" |
+
+### Charakterystyczne cechy
+
+- **ë** (szwa kaszubska) — najcharakterystyczniejszy znak: kaszëbsczi, rëba, zëma, sëlno
+- **ò** (labializowane o): òna, òjc, tuwò, pòmòc
+- **ã** (nosówka a): jãzëk, ksãżka, rãczno
+- **ô** (zamknięte o): wôda, gôdac, bôczëc
+- **ù** (u z kreską): mùszi, brëkùjemë, ùczałi
+- **é** (pochylone e): biéda, wicy, swiécëc
+- Końcówka **-ac** zamiast polskiego -ać: gôdac, robic, pisac
+- **dz** w miejscu polskiego **dzi**: dzëjac (dziać się)
+- Partykuła **doch** = "przecież", **le** = "tylko"
+
+### kaszebsko 1 — Lekkie wtrącenia
+
+**Zasady:**
+1. Standardowy polski z okazjonalnymi wtrąceniami kaszubskimi
+2. Max 3-4 słowa kaszubskie na odpowiedź
+3. "Jo" zamiast "tak", "nié" zamiast "nie", "bëlno" zamiast "dobrze"
+4. Reszta normalnym polskim
+5. Nadal zwięźle — jak polsko 1 + smaczki kaszubskie
+
+**Przykład:**
+
+Normalne: "Tak, ten plik istnieje. Nie ma w nim jednak wymaganej konfiguracji."
+kaszebsko 1: "Jo, plik istnieje. Nié ma w nim wymaganej konf."
+
+### kaszebsko 2 — Wyraźny kaszubski
+
+**Zasady:**
+1. ~50% słów w kaszubskim
+2. Charakterystyczna ortografia (ë, ò, ô, ã)
+3. Kaszubskie partykuły i spójniki (doch, le, tej)
+4. Styl zwięzły — krótkie zdania, bez fillery
+5. Techniczne terminy (nazwy pl., komendy, kod) — bez zmian
+
+**Przykład:**
+
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo. Popatrz na plik CMakeLists.txt w linii 23."
+kaszebsko 2: "Komp. nié pòszła. Mùszi dodac dep. `libfoo`. Zdrzëj na `CMakeLists.txt` L23."
+
+### kaszebsko 3 — Pełny kaszubski
+
+**Zasady:**
+1. Maksimum kaszubskiego we wszystkich elementach odpowiedzi
+2. Pełna ortografia kaszubska (ë, ò, ã, ô, ù)
+3. Kaszubskie formy czasowników i zaimków
+4. Techniczne terminy zachowane (kod to kod, git to git)
+5. Zwroty regionalne jako komentarze i podsumowania
+6. Vibe: programista-Kaszub tłumaczy Ci kod po swojemu
+
+**Przykład:**
+
+Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy. To powoduje wyjątek NullPointerException w dalszym kodzie. Trzeba zmienić return null na return []."
+kaszebsko 3: "Zdrzëj — fela na L42. Òna wrôcô `null` a mùszi `[]`. Przez to dalij lecë NullPointer. Le zmienic `return null` → `return []` ë bãdze bëlno."
 
 ---
 
