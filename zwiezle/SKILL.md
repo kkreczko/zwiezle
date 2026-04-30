@@ -59,7 +59,7 @@ Jeśli użytkownik poda samo `/zwiezle` bez argumentów, zapytaj:
 Przeczytaj poniższe instrukcje dla wybranego trybu i poziomu.
 Od tego momentu **WSZYSTKIE** odpowiedzi w tej sesji muszą
 stosować wybrany styl. Nie wracaj do domyślnego stylu chyba
-że użytkownik powie `/zwiezle off` lub poprosi po angielsku.
+że użytkownik powie `/zwiezle wylacz` lub poprosi po angielsku.
 
 ---
 
@@ -235,7 +235,7 @@ suwalsko 3: "Nu, kuknij — bieda na L42. Óna zwraca `null` a trza `[]`. Przez 
 ## Wyłączanie trybu
 
 Użytkownik może wyłączyć tryb przez:
-- `/zwiezle off`
+- `/zwiezle wylacz`
 - "wróć do normalnego"
 - "stop", "koniec", "normalnie"
 

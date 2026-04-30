@@ -21,7 +21,7 @@ Klaudiusz może pracować w kilku trybach.
 ```
 /zwiezle polsko 2
 /zwiezle suwalsko 3
-/zwiezle off
+/zwiezle wylacz
 ```
 
 ## Instalacja
