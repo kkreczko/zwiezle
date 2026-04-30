@@ -24,6 +24,7 @@ Klaudiusz może pracować w kilku trybach.
 ```
 /zwiezle polsko 2
 /zwiezle suwalsko 3
+/zwiezle kaszebsko 1
 /zwiezle wylacz
 ```
 
@@ -43,14 +44,48 @@ mkdir -p ~/.claude/skills/zwiezle && curl -fsSL https://raw.githubusercontent.co
 
 ## Przykłady
 
-**polsko 2:**
+**polsko 1** — krótko i na temat:
+```
+Normalne: "Chciałbym zwrócić uwagę, że ten plik konfiguracyjny nie istnieje w podanej lokalizacji.
+           Proponuję sprawdzić, czy ścieżka jest prawidłowa."
+polsko 1: "Plik nie istnieje w tej ścieżce. Sprawdź ścieżkę."
+```
+
+**polsko 2** — telegraficzny:
 ```
 Normalne: "Kompilacja zakończyła się niepowodzeniem z powodu brakującej zależności libfoo w wersji 2.3 lub wyższej."
 polsko 2: "Komp. ✗ — brak dep. `libfoo>=2.3`"
 ```
 
-**suwalsko 3:**
+**polsko 3** — minimalistyczny:
+```
+Normalne: "Aby zainstalować tę zależność, musisz uruchomić następujące polecenie w terminalu."
+polsko 3: "`pip install foo`"
+```
+
+**suwalsko 2** — wyraźna gwara:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+suwalsko 2: "Komp. ni poszła. Trza dodać dep. `libfoo`. Kuknij na `CMakeLists.txt` L23."
+```
+
+**suwalsko 3** — pełna gwara suwalska:
 ```
 Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy."
-suwalsko 3: "Nu, kuknij — bieda na L42. Óna zwraca `null` a trza `[]`."
+suwalsko 3: "Nu, kuknij — bieda na L42. Óna zwraca `null` a trza `[]`.
+             Jeno zmienić `return null` → `return []` dy będzie dobrza."
+```
+
+**kaszebsko 2** — wyraźny kaszubski:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+kaszebsko 2: "Komp. nié pòszła. Mùszi dodac dep. `libfoo`. Zdrzëj na `CMakeLists.txt` L23."
+```
+
+**kaszebsko 3** — pełny kaszëbsczi:
+```
+Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy.
+           Trzeba zmienić return null na return []."
+kaszebsko 3: "Zdrzëj — fela na L42. Òna wrôcô `null` a mùszi `[]`.
+              Le zmienic `return null` → `return []` ë bãdze bëlno."
 ```
