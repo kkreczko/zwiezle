@@ -1,8 +1,11 @@
-# 🇵🇱 Zwięźle
+# Zwięźle
 
-Skill przełączający agenta na **zwięzły polski** — tryb `polsko` (telegraficzny, zero fillery) lub `suwalsko` (gwara suwalska). Każdy tryb ma 3 poziomy intensywności.
+Twój Klaudiusz używa zbyt dużo tokenów? Chcesz by mówił w twoim ojczystym języku i był tańszy (lepszy) w użyciu? Ta umiejętność jest idealna dla ciebie.
+Zaprzęgnij swojego blaszaka (clankera) do ciężkiej pracy używając /zwiezle i już nie martw się kosztami. 
 
 ## Tryby
+
+Klaudiusz może pracować w kilku trybach.
 
 | Tryb | Styl | Oszczędność tokenów |
 |------|------|---------------------|
@@ -48,7 +51,3 @@ polsko 2: "Komp. ✗ — brak dep. `libfoo>=2.3`"
 Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy."
 suwalsko 3: "Nu, kuknij — bieda na L42. Óna zwraca `null` a trza `[]`."
 ```
-
-## Licencja
-
-MIT
