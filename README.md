@@ -1,6 +1,6 @@
 # Zwięźle
 
-Twój Klaudiusz używa zbyt dużo tokenów? Chcesz by mówił w twoim ojczystym języku i był tańszy (lepszy) w użyciu? Ta umiejętność jest idealna dla ciebie.
+Twój Klaudiusz używa zbyt dużo tokenów? Chcesz by mówił w twoim ojczystym języku i był tańszy (lepszy) w użyciu? A może nie chcesz żeby gdakał jak gdaka trzy po trzy (pierdolił)? Jeżeli tak to ta umiejętność jest idealna dla ciebie.
 Zaprzęgnij swojego blaszaka (clankera) do ciężkiej pracy używając /zwiezle i już nie martw się kosztami. Wystarczy użyć skilla na początku rozmowy i twój ~niewo~ asystent będzie o tym pamiętać.
 
 ## Tryby
