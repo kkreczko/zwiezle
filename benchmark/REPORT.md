@@ -1,11 +1,14 @@
 # Benchmark redukcji tokenów — wyniki empiryczne
 
-Tokenizer: `o200k_base` | Próbek: 60
+Tokenizer: `o200k_base` | Próbek: 78
 
 ## Wyniki per tryb (średnia ze wszystkich kategorii)
 
 | Tryb       | Średnia oszcz.   | Min   | Max   |   N |
 |------------|------------------|-------|-------|-----|
+| godka1     | 58.3%            | 50.6% | 62.1% |   6 |
+| godka2     | 53.6%            | 48.5% | 61.1% |   6 |
+| godka3     | 27.0%            | 7.6%  | 38.9% |   6 |
 | kaszebsko1 | 57.9%            | 51.8% | 62.1% |   6 |
 | kaszebsko2 | 48.5%            | 33.3% | 55.6% |   6 |
 | kaszebsko3 | 24.5%            | 4.5%  | 37.5% |   6 |
@@ -21,12 +24,12 @@ Tokenizer: `o200k_base` | Próbek: 60
 
 | Kategoria      |   Norm. tok. (śr.) |   Zwięzłe tok. (śr.) | Oszcz. (śr.)   |
 |----------------|--------------------|----------------------|----------------|
-| short_error    |                 72 |                 26.8 | 62.8%          |
-| short_notfound |                 66 |                 30.6 | 53.6%          |
-| mid_explain    |                118 |                 55.2 | 53.2%          |
-| mid_install    |                151 |                 62.7 | 58.5%          |
-| long_review    |                259 |                117   | 54.8%          |
-| long_arch      |                251 |                117.4 | 53.2%          |
+| short_error    |                 72 |                 28.3 | 60.7%          |
+| short_notfound |                 66 |                 32.8 | 50.3%          |
+| mid_explain    |                118 |                 57.8 | 51.1%          |
+| mid_install    |                151 |                 65.4 | 56.7%          |
+| long_review    |                259 |                121   | 53.3%          |
+| long_arch      |                251 |                123.8 | 50.7%          |
 
 ## Szczegółowe wyniki
 
@@ -92,3 +95,21 @@ Tokenizer: `o200k_base` | Próbek: 60
 | long_arch      | kaszebsko1 |           251 |            121 | 51.8%         |
 | long_arch      | kaszebsko2 |           251 |            128 | 49.0%         |
 | long_arch      | kaszebsko3 |           251 |            177 | 29.5%         |
+| short_error    | godka1     |            72 |             28 | 61.1%         |
+| short_error    | godka2     |            72 |             28 | 61.1%         |
+| short_error    | godka3     |            72 |             44 | 38.9%         |
+| short_notfound | godka1     |            66 |             25 | 62.1%         |
+| short_notfound | godka2     |            66 |             34 | 48.5%         |
+| short_notfound | godka3     |            66 |             61 | 7.6%          |
+| mid_explain    | godka1     |           118 |             47 | 60.2%         |
+| mid_explain    | godka2     |           118 |             60 | 49.2%         |
+| mid_explain    | godka3     |           118 |             92 | 22.0%         |
+| mid_install    | godka1     |           151 |             64 | 57.6%         |
+| mid_install    | godka2     |           151 |             63 | 58.3%         |
+| mid_install    | godka3     |           151 |             96 | 36.4%         |
+| long_review    | godka1     |           259 |            108 | 58.3%         |
+| long_review    | godka2     |           259 |            114 | 56.0%         |
+| long_review    | godka3     |           259 |            181 | 30.1%         |
+| long_arch      | godka1     |           251 |            124 | 50.6%         |
+| long_arch      | godka2     |           251 |            129 | 48.6%         |
+| long_arch      | godka3     |           251 |            183 | 27.1%         |

@@ -419,6 +419,132 @@
       "normal_tokens": 251,
       "terse_tokens": 177,
       "savings_pct": 29.5
+    },
+    {
+      "category": "short_error",
+      "mode": "godka1",
+      "normal_tokens": 72,
+      "terse_tokens": 28,
+      "savings_pct": 61.1
+    },
+    {
+      "category": "short_error",
+      "mode": "godka2",
+      "normal_tokens": 72,
+      "terse_tokens": 28,
+      "savings_pct": 61.1
+    },
+    {
+      "category": "short_error",
+      "mode": "godka3",
+      "normal_tokens": 72,
+      "terse_tokens": 44,
+      "savings_pct": 38.9
+    },
+    {
+      "category": "short_notfound",
+      "mode": "godka1",
+      "normal_tokens": 66,
+      "terse_tokens": 25,
+      "savings_pct": 62.1
+    },
+    {
+      "category": "short_notfound",
+      "mode": "godka2",
+      "normal_tokens": 66,
+      "terse_tokens": 34,
+      "savings_pct": 48.5
+    },
+    {
+      "category": "short_notfound",
+      "mode": "godka3",
+      "normal_tokens": 66,
+      "terse_tokens": 61,
+      "savings_pct": 7.6
+    },
+    {
+      "category": "mid_explain",
+      "mode": "godka1",
+      "normal_tokens": 118,
+      "terse_tokens": 47,
+      "savings_pct": 60.2
+    },
+    {
+      "category": "mid_explain",
+      "mode": "godka2",
+      "normal_tokens": 118,
+      "terse_tokens": 60,
+      "savings_pct": 49.2
+    },
+    {
+      "category": "mid_explain",
+      "mode": "godka3",
+      "normal_tokens": 118,
+      "terse_tokens": 92,
+      "savings_pct": 22.0
+    },
+    {
+      "category": "mid_install",
+      "mode": "godka1",
+      "normal_tokens": 151,
+      "terse_tokens": 64,
+      "savings_pct": 57.6
+    },
+    {
+      "category": "mid_install",
+      "mode": "godka2",
+      "normal_tokens": 151,
+      "terse_tokens": 63,
+      "savings_pct": 58.3
+    },
+    {
+      "category": "mid_install",
+      "mode": "godka3",
+      "normal_tokens": 151,
+      "terse_tokens": 96,
+      "savings_pct": 36.4
+    },
+    {
+      "category": "long_review",
+      "mode": "godka1",
+      "normal_tokens": 259,
+      "terse_tokens": 108,
+      "savings_pct": 58.3
+    },
+    {
+      "category": "long_review",
+      "mode": "godka2",
+      "normal_tokens": 259,
+      "terse_tokens": 114,
+      "savings_pct": 56.0
+    },
+    {
+      "category": "long_review",
+      "mode": "godka3",
+      "normal_tokens": 259,
+      "terse_tokens": 181,
+      "savings_pct": 30.1
+    },
+    {
+      "category": "long_arch",
+      "mode": "godka1",
+      "normal_tokens": 251,
+      "terse_tokens": 124,
+      "savings_pct": 50.6
+    },
+    {
+      "category": "long_arch",
+      "mode": "godka2",
+      "normal_tokens": 251,
+      "terse_tokens": 129,
+      "savings_pct": 48.6
+    },
+    {
+      "category": "long_arch",
+      "mode": "godka3",
+      "normal_tokens": 251,
+      "terse_tokens": 183,
+      "savings_pct": 27.1
     }
   ]
 }

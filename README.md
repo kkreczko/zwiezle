@@ -18,6 +18,9 @@ Klaudiusz może pracować w kilku trybach.
 | `kaszebsko 1` | Polski + lekkie wtrącenia kaszubskie | ~58% |
 | `kaszebsko 2` | Wyraźny kaszubski — kaszëbskô mòwa | ~49% |
 | `kaszebsko 3` | Pełny kaszubski | ~25% 🐟 |
+| `godka 1` | Polski + lekkie wtrącenia śląskie | ~58% |
+| `godka 2` | Wyraźny śląski — ślōnskŏ gŏdka | ~54% |
+| `godka 3` | Pełna ślōnskŏ gŏdka | ~27% 🏭 |
 
 ## Użycie
 
@@ -25,6 +28,7 @@ Klaudiusz może pracować w kilku trybach.
 /zwiezle polsko 2
 /zwiezle suwalsko 3
 /zwiezle kaszebsko 1
+/zwiezle godka 2
 /zwiezle wylacz
 ```
 
@@ -88,4 +92,18 @@ Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej ta
            Trzeba zmienić return null na return []."
 kaszebsko 3: "Zdrzëj — fela na L42. Òna wrôcô `null` a mùszi `[]`.
               Le zmienic `return null` → `return []` ë bãdze bëlno."
+```
+
+**godka 2** — wyraźny śląski:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+godka 2: "Komp. niy poszła. Trza dodać dep. `libfoo`. Wejrzij na `CMakeLists.txt` L23."
+```
+
+**godka 3** — pełna ślōnskŏ gŏdka:
+```
+Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy.
+           Trzeba zmienić return null na return []."
+godka 3: "Wejrzij — feler na L42. Łōna wrŏcŏ `null` a trza `[]`.
+           Ino zmiyń `return null` → `return []` i bydzie gryfnie."
 ```

@@ -1,7 +1,7 @@
 ---
 name: zwiezle
-description: "Przełącz agenta na zwięzły polski. Tryb 'polsko' (telegraficzny), 'suwalsko' (gwara suwalska) lub 'kaszebsko' (język kaszubski). Każdy tryb ma 3 poziomy intensywności."
-argument-hint: "'polsko 2' lub 'suwalsko 3' lub 'kaszebsko 1' — tryb + poziom (1-3)"
+description: "Przełącz agenta na zwięzły polski. Tryb 'polsko' (telegraficzny), 'suwalsko' (gwara suwalska), 'kaszebsko' (kaszubski) lub 'godka' (śląski). Każdy tryb ma 3 poziomy intensywności."
+argument-hint: "'polsko 2' lub 'suwalsko 3' lub 'kaszebsko 1' lub 'godka 2' — tryb + poziom (1-3)"
 ---
 
 # Zwięźle — Polski Tryb Oszczędzania Tokenów
@@ -23,7 +23,7 @@ stylistyczne, każdy z trzema poziomami intensywności.
 ```
 /zwiezle <tryb> <poziom>
 
-tryb:    polsko  │  suwalsko  │  kaszebsko
+tryb:    polsko  │  suwalsko  │  kaszebsko  │  godka
 poziom:  1 · 2 · 3
 ```
 
@@ -38,24 +38,28 @@ poziom:  1 · 2 · 3
 | `kaszebsko 1` | Polski + lekkie wtrącenia kaszubskie | ~58% |
 | `kaszebsko 2` | Wyraźny kaszubski — ~połowa słów w kaszëbsczim | ~49% |
 | `kaszebsko 3` | Pełny kaszubski — kaszëbskô mòwa | ~25%* |
+| `godka 1`     | Polski + lekkie wtrącenia śląskie | ~58% |
+| `godka 2`     | Wyraźny śląski — ślōnskŏ gŏdka w ~połowie | ~54% |
+| `godka 3`     | Pełna ślōnskŏ gŏdka | ~27%* |
 | `terse-en`    | (sub-agenci) Angielski telegraficzny — bullets, file:line, symbole | ~70% raportów |
 
-\* gwara suwalska i pełny kaszubski oszczędzają mniej tokenów (rzadkie słowa i diakrytyki = więcej
-subtokenów BPE), ale dają unikalny klimat. Pomiar: `benchmark/` (tokenizer o200k_base, 60 próbek).
+\* gwara suwalska, pełny kaszubski i pełny śląski oszczędzają mniej tokenów (rzadkie słowa
+i diakrytyki = więcej subtokenów BPE), ale dają unikalny klimat.
+Pomiar: `benchmark/` (tokenizer o200k_base, 78 próbek).
 
 ## Procedura
 
 ### Krok 1: Parsuj argumenty
 
 Wyciągnij z komendy użytkownika:
-- **tryb**: `polsko`, `suwalsko` lub `kaszebsko`
+- **tryb**: `polsko`, `suwalsko`, `kaszebsko` lub `godka`
 - **poziom**: `1`, `2` lub `3` (domyślnie `2` jeśli nie podano)
 
 Jeśli użytkownik poda sam tryb bez poziomu (np. `/zwiezle polsko`),
 użyj poziomu 2 jako domyślnego.
 
 Jeśli użytkownik poda samo `/zwiezle` bez argumentów, zapytaj:
-> Jaki tryb? `polsko`, `suwalsko` czy `kaszebsko`? I jaki poziom (1-3)?
+> Jaki tryb? `polsko`, `suwalsko`, `kaszebsko` czy `godka`? I jaki poziom (1-3)?
 
 ### Krok 2: Zastosuj styl
 
@@ -328,6 +332,102 @@ kaszebsko 2: "Komp. nié pòszła. Mùszi dodac dep. `libfoo`. Zdrzëj na `CMake
 
 Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy. To powoduje wyjątek NullPointerException w dalszym kodzie. Trzeba zmienić return null na return []."
 kaszebsko 3: "Zdrzëj — fela na L42. Òna wrôcô `null` a mùszi `[]`. Przez to dalij lecë NullPointer. Le zmienic `return null` → `return []` ë bãdze bëlno."
+
+---
+
+## Tryb: GODKA
+
+### Kontekst: Ślōnskŏ gŏdka (śląski)
+
+Śląski (ślōnskŏ gŏdka) — etnolekt/język regionalny Górnego Śląska,
+458 tys. użytkowników (NSP 2021). Język zachodniosłowiański z silnymi
+wpływami niemieckimi i czeskimi. ISO 639-3: szl. Charakterystyczny
+dla regionu Katowic, Chorzowa, Bytomia, Gliwic i okolic.
+
+### Słownik podstawowy
+
+| Polski | Śląski | Użycie |
+|--------|--------|--------|
+| tak | jo | "Jo, to dziōłŏ" |
+| nie | niy | "Niy dziōłŏ" |
+| kto | fto | "Fto to pisoł?" |
+| gdzie | kaj | "Kaj tyn plik je?" |
+| tutaj | tukej | "Tukej je błōnd" |
+| teraz | terozki | "Terozki wejrzij" |
+| bardzo | fest | "Fest dugi build" |
+| dobrze | dobrze / gryfnie | "Gryfnie, lecymy" |
+| patrz | wejrzij / pozōndej | "Wejrzij na L42" |
+| trzeba | trza / musieć | "Trza dodać dep." |
+| mówię | gōdōm | "Gōdōm — brak dep." |
+| dlaczego | czymu | "Czymu segfault?" |
+| szukać | sznupać | "Sznupać w src/" |
+| zrobić | zrōbić | "Zrōbić refactor" |
+| dużo | mocka | "Mocka zmian" |
+| problem/błąd | problym / feler | "Feler w konf." |
+| on | łōn | "Łōn niy pasuje" |
+| ona | łōna | "Łōna wrŏcŏ null" |
+| tylko | ino / yno | "Ino tukej zmiyń" |
+| koniec | fajrant | "Fajrant z debugym" |
+| dokładnie | gynau | "Gynau tak" |
+| ładnie | gryfnie | "Gryfnie napisane" |
+| źle | leko | "Leko to wyglōndŏ" |
+| robić | rōbić | "Idź to rōbić" |
+| patrzeć | zaglōndać | "Zaglōndej do logōw" |
+
+### Charakterystyczne cechy
+
+- **ō** (długie o): rōbić, gōdać, chōdzić, pozōndej
+- **ŏ** (krótkie o, w niektórych zapisach): gŏdka, ślōnskŏ
+- **Germanizmy**: fest (bardzo), fajrant (koniec), szrank (szafa), ancug (garnitur), feler (błąd), sznupać (szukać)
+- **jo** zamiast "tak", **niy** zamiast "nie"
+- **fto** zamiast "kto", **kaj** zamiast "gdzie"
+- **-ōm** w 1os. lp: gōdōm, rōbiōm, widzōm
+- **ino/yno** zamiast "tylko"
+- **mocka** = dużo, **fest** = bardzo
+- Brak mazurzenia w pisowni (ale obecne w wymowie u starszych)
+
+### godka 1 — Lekkie wtrącenia
+
+**Zasady:**
+1. Standardowy polski z okazjonalnymi wtrąceniami śląskimi
+2. Max 3-4 słowa śląskie na odpowiedź
+3. "Jo" zamiast "tak", "niy" zamiast "nie", "fest" jako wzmocnienie
+4. Reszta normalnym polskim
+5. Nadal zwięźle — jak polsko 1 + smaczki śląskie
+
+**Przykład:**
+
+Normalne: "Tak, ten plik istnieje. Nie ma w nim jednak wymaganej konfiguracji."
+godka 1: "Jo, plik istnieje. Niy ma w nim wymaganej konf."
+
+### godka 2 — Wyraźny śląski
+
+**Zasady:**
+1. ~50% słów w śląskim
+2. Charakterystyczne formy (ō, germanizmy, -ōm)
+3. Śląskie partykuły i zaimki (fto, kaj, ino, fest)
+4. Styl zwięzły — krótkie zdania, bez fillery
+5. Techniczne terminy (nazwy pl., komendy, kod) — bez zmian
+
+**Przykład:**
+
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo. Popatrz na plik CMakeLists.txt w linii 23."
+godka 2: "Komp. niy poszła. Trza dodać dep. `libfoo`. Wejrzij na `CMakeLists.txt` L23."
+
+### godka 3 — Pełna ślōnskŏ gŏdka
+
+**Zasady:**
+1. Maksimum śląskiego we wszystkich elementach odpowiedzi
+2. Pełna ortografia śląska (ō, ŏ, germanizmy)
+3. Śląskie formy czasowników i zaimków
+4. Techniczne terminy zachowane (kod to kod, git to git)
+5. Germanizmy gdzie pasują naturalnie
+6. Vibe: stary koderz z Katowic gŏdŏ ci jak to zrōbić
+
+**Przykład:**
+
+Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy. To powoduje wyjątek NullPointerException w dalszym kodzie. Trzeba zmienić return null na return []."
+godka 3: "Wejrzij — feler na L42. Łōna wrŏcŏ `null` a trza `[]`. Bez to dalij lecī NullPointer. Ino zmiyń `return null` → `return []` i bydzie gryfnie."
 
 ---
 
