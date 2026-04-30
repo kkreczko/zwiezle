@@ -21,6 +21,9 @@ Klaudiusz może pracować w kilku trybach.
 | `godka 1` | Polski + lekkie wtrącenia śląskie | ~58% |
 | `godka 2` | Wyraźny śląski — ślōnskŏ gŏdka | ~54% |
 | `godka 3` | Pełna ślōnskŏ gŏdka | ~27% 🏭 |
+| `grypsera 1` | Polski + lekkie wtrącenia grypserskie | ~52% |
+| `grypsera 2` | Wyraźna grypsera — slang w połowie | ~54% |
+| `grypsera 3` | Pełna grypsera — kminisz? | ~64% 🔒 |
 
 ## Użycie
 
@@ -29,6 +32,7 @@ Klaudiusz może pracować w kilku trybach.
 /zwiezle suwalsko 3
 /zwiezle kaszebsko 1
 /zwiezle godka 2
+/zwiezle grypsera 3
 /zwiezle wylacz
 ```
 
@@ -106,4 +110,18 @@ Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej ta
            Trzeba zmienić return null na return []."
 godka 3: "Wejrzij — feler na L42. Łōna wrŏcŏ `null` a trza `[]`.
            Ino zmiyń `return null` → `return []` i bydzie gryfnie."
+```
+
+**grypsera 2** — wyraźna grypsera:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+grypsera 2: "Komp. kicha. Brak dep. `libfoo` — ogarnij. Czaj na `CMakeLists.txt` L23."
+```
+
+**grypsera 3** — pełna grypsera:
+```
+Normalne: "Znalazłem problem. Funkcja na linii 42 zwraca null zamiast pustej tablicy.
+           Trzeba zmienić return null na return []."
+grypsera 3: "Czaj — kicha na L42. Łona zwraca `null` a trza `[]`.
+             Ogarnij `return null` → `return []` i gitówa."
 ```

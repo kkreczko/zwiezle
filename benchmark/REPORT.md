@@ -1,6 +1,6 @@
 # Benchmark redukcji tokenów — wyniki empiryczne
 
-Tokenizer: `o200k_base` | Próbek: 78
+Tokenizer: `o200k_base` | Próbek: 96
 
 ## Wyniki per tryb (średnia ze wszystkich kategorii)
 
@@ -9,6 +9,9 @@ Tokenizer: `o200k_base` | Próbek: 78
 | godka1     | 58.3%            | 50.6% | 62.1% |   6 |
 | godka2     | 53.6%            | 48.5% | 61.1% |   6 |
 | godka3     | 27.0%            | 7.6%  | 38.9% |   6 |
+| grypsera1  | 52.1%            | 41.2% | 65.3% |   6 |
+| grypsera2  | 54.1%            | 44.1% | 59.7% |   6 |
+| grypsera3  | 64.0%            | 48.0% | 70.8% |   6 |
 | kaszebsko1 | 57.9%            | 51.8% | 62.1% |   6 |
 | kaszebsko2 | 48.5%            | 33.3% | 55.6% |   6 |
 | kaszebsko3 | 24.5%            | 4.5%  | 37.5% |   6 |
@@ -24,12 +27,12 @@ Tokenizer: `o200k_base` | Próbek: 78
 
 | Kategoria      |   Norm. tok. (śr.) |   Zwięzłe tok. (śr.) | Oszcz. (śr.)   |
 |----------------|--------------------|----------------------|----------------|
-| short_error    |                 72 |                 28.3 | 60.7%          |
-| short_notfound |                 66 |                 32.8 | 50.3%          |
-| mid_explain    |                118 |                 57.8 | 51.1%          |
-| mid_install    |                151 |                 65.4 | 56.7%          |
-| long_review    |                259 |                121   | 53.3%          |
-| long_arch      |                251 |                123.8 | 50.7%          |
+| short_error    |               72   |                 27.7 | 61.5%          |
+| short_notfound |               66   |                 31.8 | 51.8%          |
+| mid_explain    |              120.4 |                 56.9 | 52.6%          |
+| mid_install    |              141.8 |                 63.8 | 54.4%          |
+| long_review    |              259   |                117.2 | 54.7%          |
+| long_arch      |              247.1 |                121.2 | 51.0%          |
 
 ## Szczegółowe wyniki
 
@@ -113,3 +116,21 @@ Tokenizer: `o200k_base` | Próbek: 78
 | long_arch      | godka1     |           251 |            124 | 50.6%         |
 | long_arch      | godka2     |           251 |            129 | 48.6%         |
 | long_arch      | godka3     |           251 |            183 | 27.1%         |
+| short_error    | grypsera1  |            72 |             25 | 65.3%         |
+| short_error    | grypsera2  |            72 |             29 | 59.7%         |
+| short_error    | grypsera3  |            72 |             21 | 70.8%         |
+| short_notfound | grypsera1  |            66 |             32 | 51.5%         |
+| short_notfound | grypsera2  |            66 |             30 | 54.5%         |
+| short_notfound | grypsera3  |            66 |             21 | 68.2%         |
+| mid_explain    | grypsera1  |           131 |             66 | 49.6%         |
+| mid_explain    | grypsera2  |           131 |             53 | 59.5%         |
+| mid_explain    | grypsera3  |           131 |             40 | 69.5%         |
+| mid_install    | grypsera1  |           102 |             60 | 41.2%         |
+| mid_install    | grypsera2  |           102 |             57 | 44.1%         |
+| mid_install    | grypsera3  |           102 |             53 | 48.0%         |
+| long_review    | grypsera1  |           259 |            107 | 58.7%         |
+| long_review    | grypsera2  |           259 |            115 | 55.6%         |
+| long_review    | grypsera3  |           259 |             80 | 69.1%         |
+| long_arch      | grypsera1  |           230 |            123 | 46.5%         |
+| long_arch      | grypsera2  |           230 |            112 | 51.3%         |
+| long_arch      | grypsera3  |           230 |             95 | 58.7%         |
