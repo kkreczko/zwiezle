@@ -9,7 +9,7 @@ Klaudiusz może pracować w kilku trybach.
 
 | Tryb | Styl | Oszczędność tokenów |
 |------|------|---------------------|
-| `polsko 1` | Lekko zwięzłyi | ~20% |
+| `polsko 1` | Lekko zwięzły | ~20% |
 | `polsko 2` | Telegraficzny | ~40% |
 | `polsko 3` | Minimalistyczny | ~60% |
 | `suwalsko 1` | Polski + lekkie wtrącenia z gwary | ~10% |
