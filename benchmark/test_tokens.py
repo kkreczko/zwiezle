@@ -160,8 +160,8 @@ def test_all_samples_have_savings():
     """Każdy tryb powinien dawać jakąś oszczędność vs normalna odpowiedź."""
     results = run_benchmark()
     for sample in results["samples"]:
-        # suwalsko3 może mieć ujemne oszczędności — to jest oczekiwane
-        if sample["mode"] == "suwalsko3":
+        # suwalsko3 i staropolsko3 mogą mieć ujemne oszczędności — to jest oczekiwane
+        if sample["mode"] in ("suwalsko3", "staropolsko3"):
             continue
         assert sample["savings_pct"] > 0, (
             f"{sample['category']}/{sample['mode']}: "

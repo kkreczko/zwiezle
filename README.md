@@ -7,7 +7,7 @@ Dwa skille:
 | Skill | Tryby | Użycie |
 |-------|-------|--------|
 | **zwiezle** | `polsko` (3 poziomy) | `/zwiezle 2` |
-| **multilingwista** | `suwalsko`, `kaszebsko`, `godka`, `grypsera` (×3) | `/multilingwista suwalsko 2` |
+| **multilingwista** | `suwalsko`, `kaszebsko`, `godka`, `grypsera`, `sigma`, `staropolsko` (×3) | `/multilingwista sigma 2` |
 
 ---
 
@@ -70,6 +70,12 @@ poziom 3: "`pip install foo`"
 | `grypsera 1` | Pol + lekkie wtrącenia | ~52% |
 | `grypsera 2` | Wyraźna grypsera | ~54% |
 | `grypsera 3` | Pełna grypsera | ~64% 🔒 |
+| `sigma 1` | Pol + lekkie wtrącenia | ~55% |
+| `sigma 2` | Wyraźny slang Gen Z | ~58% |
+| `sigma 3` | Pełny brainrot | ~65% 🗿 |
+| `staropolsko 1` | Pol + lekkie wtrącenia | ~58% |
+| `staropolsko 2` | Wyraźny styl staropolski | ~50% |
+| `staropolsko 3` | Pełny staropolski | ~22% 📜 |
 
 ### Użycie
 
@@ -78,6 +84,8 @@ poziom 3: "`pip install foo`"
 /multilingwista kaszebsko 3
 /multilingwista godka 1
 /multilingwista grypsera 3
+/multilingwista sigma 2
+/multilingwista staropolsko 3
 /multilingwista wylacz
 ```
 
@@ -105,6 +113,18 @@ godka 2: "Komp. niy poszła. Trza dodać dep. `libfoo`. Wejrzij na `CMakeLists.t
 ```
 Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
 grypsera 2: "Komp. kicha. Brak dep. `libfoo` — ogarnij. Czaj na `CMakeLists.txt` L23."
+```
+
+**sigma 2** — slang Gen Z:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+sigma 2: "Komp. L. Brak dep. `libfoo` — skill issue. Obczaj `CMakeLists.txt` L23 XD"
+```
+
+**staropolsko 2** — archaiczny polski:
+```
+Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność libfoo."
+staropolsko 2: "Kompilacyja nie powiodła się, zaiste. Trza jest dodać dep. `libfoo`, bowiem jej omylność wielce szkodzi."
 ```
 
 ---

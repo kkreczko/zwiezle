@@ -1,6 +1,6 @@
 """
 Hardcoded próbki odpowiedzi: normalna (verbose) vs każdy tryb zwięźle.
-6 kategorii × 13 trybów = 78 par.
+6 kategorii × 19 trybów = 114 par.
 """
 
 # Każda próbka: (category, mode, normal_text, terse_text)
@@ -1454,5 +1454,505 @@ SAMPLES: list[tuple[str, str, str, str]] = [
         "- Sesje w Redis, TTL=token\n\n"
         "Req→Auth→Token→Repo→Redis/PG\n"
         "Klucze `config/auth.py` z env. Lipa → 401, gitówa.",
+    ),
+    # =========================================================================
+    # SIGMA — slang Gen Z, 3 poziomy
+    # =========================================================================
+    # --- short_error ---
+    (
+        "short_error",
+        "sigma1",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "W, błąd w main.cpp:42 — brak średnika. Ogarnij i przekompiluj.",
+    ),
+    (
+        "short_error",
+        "sigma2",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Komp. L `main.cpp:42` — brak `;`\n- wrzuć średnik → ogarnij rekomp XD",
+    ),
+    (
+        "short_error",
+        "sigma3",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "L `main.cpp:42` brak `;` — ogarnij fr 🗿",
+    ),
+    # --- short_notfound ---
+    (
+        "short_notfound",
+        "sigma1",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "L, config.yaml nie siedzi w tej ścieżce. Szperaj wyżej albo czaj czy ktoś nie przeniósł.",
+    ),
+    (
+        "short_notfound",
+        "sigma2",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "`config.yaml` — L, nie ma fr. Ktoś go zakopał. Szperaj w parent dir XD",
+    ),
+    (
+        "short_notfound",
+        "sigma3",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "`config.yaml` L. Zwiało albo zakopane. Szperaj wyżej fr",
+    ),
+    # --- mid_explain ---
+    (
+        "mid_explain",
+        "sigma1",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "@cache zapamiętuje wyniki dla danych args. Pierwsze wywołanie liczy i chowa wynik "
+        "w pamięci. Kolejne z tymi samymi args — wyciąga z cache, ciało nie leci. "
+        "W rozwiązanie dla powtarzalnych wywołań.",
+    ),
+    (
+        "mid_explain",
+        "sigma2",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "`@cache` — chowa wyniki per args. Pierwszy strzał liczy i zapisuje. "
+        "Następne z tymi samymi args — wyciąga, ciało nie leci. Ez przyspieszenie XD",
+    ),
+    (
+        "mid_explain",
+        "sigma3",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "`@cache` chowa wynik per args. Pierwszy raz liczy, potem wyciąga. Ciało nie leci — ez W fr fr",
+    ),
+    # --- mid_install ---
+    (
+        "mid_install",
+        "sigma1",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "Ogarnij `pip install 'pandas>=2.0'`. Upewnij się że venv aktywny. "
+        "Jak nie masz — `python -m venv .venv` → `source .venv/bin/activate`.",
+    ),
+    (
+        "mid_install",
+        "sigma2",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "```bash\npython -m venv .venv && source .venv/bin/activate\npip install 'pandas>=2.0'\n```\n"
+        "Bez venv — L z zależnościami. Ogarnij najpierw venv XD",
+    ),
+    (
+        "mid_install",
+        "sigma3",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "```bash\npython -m venv .venv && source .venv/bin/activate\npip install 'pandas>=2.0'\n```\n"
+        "Najpierw venv, potem `pip`. Bez tego — L fr 🗿",
+    ),
+    # --- long_review ---
+    (
+        "long_review",
+        "sigma1",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "Przegląd PR — jest kilka L do ogarnięcia:\n\n"
+        "1. auth.py:23 — JWT bez expiration, token wieczny. Skill issue z bezpieczeństwem.\n"
+        "2. database.py:45 — SQL konkatenacją, groźba injection.\n"
+        "3. routes.py:67 — brak walidacji email.\n"
+        "4. test_auth.py — same happy paths, brak edge cases.\n"
+        "5. config.py:12 — hasło w kodzie, schowaj do env.\n\n"
+        "Ogarnij zanim merge.",
+    ),
+    (
+        "long_review",
+        "sigma2",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "⚠ 5 L, ogarnij:\n"
+        "1. `auth.py:23` JWT wieczny — skill issue, daj exp\n"
+        "2. `database.py:45` SQL sklejany — injection fr\n"
+        "3. `routes.py:67` zero walidacji email\n"
+        "4. `test_auth.py` same happy path — beta testy\n"
+        "5. `config.py:12` hasło w repo — schowaj do .env ASAP\n\n"
+        "Blokuje merge XD",
+    ),
+    (
+        "long_review",
+        "sigma3",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "⚠ 5 L:\n"
+        "`auth.py:23` JWT no-exp | `database.py:45` SQLi fr | "
+        "`routes.py:67` zero walidacji | `test_auth.py` beta testy | "
+        "`config.py:12` hasło w repo — schowaj\n\nNie puszczaj, ogarnij 🗿",
+    ),
+    # --- long_arch ---
+    (
+        "long_arch",
+        "sigma1",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Czaj jak działa auth — kilka warstw:\n"
+        "- `middleware/auth.py` — łapie każdy request, czai na token w Authorization header\n"
+        "- `services/token.py` — TokenService weryfikuje podpis, sprawdza exp, dekoduje usera\n"
+        "- `repositories/user_repo.py` — SQLAlchemy gada z PostgreSQL\n"
+        "- Sesje siedzą w Redis, TTL = czas życia tokenu\n\n"
+        "Flow: Req→Middleware→TokenSvc→UserRepo→Redis/PG\n"
+        "Klucze JWT w `config/auth.py`, ładowane z env przy starcie.",
+    ),
+    (
+        "long_arch",
+        "sigma2",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Auth — obczaj architekturę:\n"
+        "- `middleware/auth.py` — łapie req, wyciąga token z header\n"
+        "- `services/token.py` — kuma podpis, czai exp, dekoduje payload\n"
+        "- `repositories/user_repo.py` — SQLAlchemy ciągnie z PostgreSQL\n"
+        "- Sesje zakopane w Redis, TTL = życie tokenu\n\n"
+        "Flow: Req→Auth→TokenSvc→Repo→Redis/PG\n"
+        "Klucze w `config/auth.py`, z env. Token L → 401.",
+    ),
+    (
+        "long_arch",
+        "sigma3",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Czaj auth flow:\n"
+        "- `middleware/auth.py` — łapie req, wyciąga token\n"
+        "- `services/token.py` — kuma podpis + exp, dekoduje\n"
+        "- `repositories/user_repo.py` — ciągnie z PG\n"
+        "- Sesje w Redis, TTL=token\n\n"
+        "Req→Auth→Token→Repo→Redis/PG\n"
+        "Klucze `config/auth.py` z env. L → 401, W 🗿",
+    ),
+    # =========================================================================
+    # STAROPOLSKO — archaiczny polski, 3 poziomy
+    # =========================================================================
+    # --- short_error ---
+    (
+        "short_error",
+        "staropolsko1",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Zaiste, błąd w main.cpp:42 — brak średnika. Popraw i przekompiluj.",
+    ),
+    (
+        "short_error",
+        "staropolsko2",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Kompilacyja nie powiodła się `main.cpp:42` — omylność `;`\n"
+        "- dodaj średnik → dokonaj rekompilacyi.",
+    ),
+    (
+        "short_error",
+        "staropolsko3",
+        "Chciałbym zwrócić uwagę, że wystąpił błąd kompilacji w pliku main.cpp na linii 42. "
+        "Wygląda na to, że brakuje średnika na końcu instrukcji. "
+        "Proponuję dodać średnik po wyrażeniu i spróbować skompilować ponownie.",
+        "Omylność `main.cpp:42` brak `;` — popraw, a będzie zacnie.",
+    ),
+    # --- short_notfound ---
+    (
+        "short_notfound",
+        "staropolsko1",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "Nie lża znaleźć config.yaml w tej ścieżce. Trop wyżej albo sprawdź azali nie przeniesiono.",
+    ),
+    (
+        "short_notfound",
+        "staropolsko2",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "`config.yaml` — nie lża odnaleźć. Ktoś go przeniósł abo skrył. Trop w katalogu nadrzędnym.",
+    ),
+    (
+        "short_notfound",
+        "staropolsko3",
+        "Niestety, nie udało mi się znaleźć pliku o nazwie config.yaml w podanej lokalizacji. "
+        "Możliwe, że plik został przeniesiony lub usunięty. "
+        "Sugeruję sprawdzenie czy ścieżka jest poprawna lub przeszukanie katalogu nadrzędnego.",
+        "`config.yaml` przepadło. Ktoś skrył abo przeniósł. Trap wyżej.",
+    ),
+    # --- mid_explain ---
+    (
+        "mid_explain",
+        "staropolsko1",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "@cache zapamiętuje wyniki dla danych argumentów. Pierwsze wywołanie liczy i chowa "
+        "wynik w pamięci. Kolejne z tymi samymi — dobywa z cache, ciała nie tyka. "
+        "Zacne dla powtarzalnych wywołań.",
+    ),
+    (
+        "mid_explain",
+        "staropolsko2",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "`@cache` — chowa wyniki wedle argumentów. Pierwsze wywołanie liczy i zapisuje. "
+        "Następne z tymi samymi — dobywa z pamięci, ciało nie bieży. Przyspiesza wielce.",
+    ),
+    (
+        "mid_explain",
+        "staropolsko3",
+        "Dekorator @cache w Pythonie działa w ten sposób, że zapamiętuje wyniki wywołań funkcji "
+        "dla danych argumentów. Kiedy funkcja jest wywołana po raz pierwszy z konkretnymi argumentami, "
+        "wynik jest obliczany normalnie i zapisywany w pamięci podręcznej. Przy kolejnych wywołaniach "
+        "z tymi samymi argumentami, wynik jest zwracany bezpośrednio z cache bez ponownego wykonywania "
+        "ciała funkcji. To znacząco przyspiesza działanie dla funkcji z powtarzalnymi wywołaniami.",
+        "`@cache` chowa wynik wedle argumentów. Pierwszy raz liczy, potem dobywa. "
+        "Ciało nie bieży — arcyzacna rzecz.",
+    ),
+    # --- mid_install ---
+    (
+        "mid_install",
+        "staropolsko1",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "Dokonaj `pip install 'pandas>=2.0'`. Upewnij się iże venv jest aktywne. "
+        "Jeśli nie masz — `python -m venv .venv` → `source .venv/bin/activate`.",
+    ),
+    (
+        "mid_install",
+        "staropolsko2",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "```bash\npython -m venv .venv && source .venv/bin/activate\npip install 'pandas>=2.0'\n```\n"
+        "Bez venv — ambaras z zależnościami. Uczyń najpierw venv.",
+    ),
+    (
+        "mid_install",
+        "staropolsko3",
+        "Aby zainstalować bibliotekę pandas w wersji 2.0 lub wyższej, musisz uruchomić polecenie "
+        "pip install w terminalu. Upewnij się, że masz aktywowane odpowiednie środowisko wirtualne "
+        "przed instalacją. Jeśli nie masz środowiska wirtualnego, warto je najpierw utworzyć za pomocą "
+        "python -m venv .venv, a następnie aktywować source .venv/bin/activate.",
+        "```bash\npython -m venv .venv && source .venv/bin/activate\npip install 'pandas>=2.0'\n```\n"
+        "Na ten czas venv, potem `pip`. Bez tego — frasunek.",
+    ),
+    # --- long_review ---
+    (
+        "long_review",
+        "staropolsko1",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "Przegląd PR — frasunków kilka:\n\n"
+        "1. auth.py:23 — JWT bez expiration, token wieczny. Omylność bezpieczeństwa.\n"
+        "2. database.py:45 — SQL konkatenacją, groźba injection.\n"
+        "3. routes.py:67 — brak walidacyi email.\n"
+        "4. test_auth.py — jeno happy path, brak edge cases.\n"
+        "5. config.py:12 — hasło w kodzie, skryj do env.\n\n"
+        "Popraw przed merge.",
+    ),
+    (
+        "long_review",
+        "staropolsko2",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "⚠ 5 frasunków, uczyń poprawki:\n"
+        "1. `auth.py:23` JWT wieczny — omylność, dodaj exp\n"
+        "2. `database.py:45` SQL sklejany — injection gotowe\n"
+        "3. `routes.py:67` zero walidacyi email\n"
+        "4. `test_auth.py` jeno happy path — skąpe testowanie\n"
+        "5. `config.py:12` hasło w repo — skryj do .env niezwłocznie\n\n"
+        "Blokuje merge.",
+    ),
+    (
+        "long_review",
+        "staropolsko3",
+        "Przeprowadziłem przegląd kodu w tym pull requeście i mam kilka uwag. Po pierwsze, "
+        "w pliku auth.py na linii 23 tworzysz token JWT bez ustawienia czasu wygaśnięcia, "
+        "co jest poważnym problemem bezpieczeństwa, ponieważ token będzie ważny w nieskończoność. "
+        "Po drugie, w pliku database.py na linii 45 masz SQL query budowane przez konkatenację "
+        "stringów zamiast użycia parametryzowanych zapytań, co naraża aplikację na SQL injection. "
+        "Po trzecie, w pliku routes.py na linii 67 brakuje walidacji inputu od użytkownika — "
+        "pole email nie jest sprawdzane pod kątem poprawności formatu. Po czwarte, testy w pliku "
+        "test_auth.py pokrywają tylko happy path, brakuje testów dla błędnych danych wejściowych "
+        "i edge cases. Na końcu chciałbym zauważyć, że plik config.py zawiera zahardkodowane "
+        "hasło do bazy danych na linii 12, co absolutnie nie powinno znaleźć się w repozytorium. "
+        "Ogólnie kod wymaga poprawek przed mergem.",
+        "⚠ 5 frasunków:\n"
+        "`auth.py:23` JWT no-exp | `database.py:45` SQLi — nieprzyjaciel wejdzie | "
+        "`routes.py:67` zero walidacyi | `test_auth.py` skąpe | "
+        "`config.py:12` hasło w repo — skryj\n\nNie puszczaj, popraw.",
+    ),
+    # --- long_arch ---
+    (
+        "long_arch",
+        "staropolsko1",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Obacz jak działa auth — warstw kilka:\n"
+        "- `middleware/auth.py` — przechwytuje każde żądanie, baczy na token w Authorization\n"
+        "- `services/token.py` — TokenService weryfikuje podpis, sprawdza exp, dekoduje\n"
+        "- `repositories/user_repo.py` — SQLAlchemy gada z PostgreSQL\n"
+        "- Sesje trwają w Redis, TTL = czas życia tokenu\n\n"
+        "Flow: Req→Middleware→TokenSvc→UserRepo→Redis/PG\n"
+        "Klucze JWT w `config/auth.py`, ładowane z env przy starcie.",
+    ),
+    (
+        "long_arch",
+        "staropolsko2",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Auth — obacz architekturę:\n"
+        "- `middleware/auth.py` — łapie req, dobywa token z header\n"
+        "- `services/token.py` — baczy podpis, sprawdza exp, dekoduje payload\n"
+        "- `repositories/user_repo.py` — SQLAlchemy ciągnie z PostgreSQL\n"
+        "- Sesje skryte w Redis, TTL = życie tokenu\n\n"
+        "Flow: Req→Auth→TokenSvc→Repo→Redis/PG\n"
+        "Klucze w `config/auth.py`, z env. Token nie lża → 401.",
+    ),
+    (
+        "long_arch",
+        "staropolsko3",
+        "Architektura systemu autentykacji w tym projekcie składa się z kilku warstw. Na najwyższym "
+        "poziomie mamy middleware w pliku middleware/auth.py, który przechwytuje każde żądanie HTTP "
+        "i sprawdza obecność tokenu JWT w nagłówku Authorization. Token jest następnie przekazywany "
+        "do serwisu TokenService w pliku services/token.py, który weryfikuje podpis cyfrowy, "
+        "sprawdza datę wygaśnięcia i dekoduje payload z informacjami o użytkowniku. "
+        "Zdekodowane dane użytkownika trafiają do UserRepository w pliku repositories/user_repo.py, "
+        "który komunikuje się z bazą danych PostgreSQL przez SQLAlchemy ORM. "
+        "Sesje użytkowników są przechowywane w Redis z TTL równym czasowi życia tokenu. "
+        "Cały flow to: Request → AuthMiddleware → TokenService → UserRepository → Redis/PostgreSQL. "
+        "Konfiguracja kluczy JWT znajduje się w pliku config/auth.py i jest ładowana ze zmiennych "
+        "środowiskowych przy starcie aplikacji.",
+        "Bacz auth flow:\n"
+        "- `middleware/auth.py` — łapie req, dobywa token\n"
+        "- `services/token.py` — baczy podpis + exp, dekoduje\n"
+        "- `repositories/user_repo.py` — ciągnie z PG\n"
+        "- Sesje w Redis, TTL=token\n\n"
+        "Req→Auth→Token→Repo→Redis/PG\n"
+        "Klucze `config/auth.py` z env. Omylność → 401, zaiste.",
     ),
 ]
