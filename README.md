@@ -117,7 +117,9 @@ grypsera 2: "Komp. kicha. Brak dep. `libfoo` — ogarnij. Czaj na `CMakeLists.tx
 # zwiezle (zwięzły polski)
 mkdir -p ~/.copilot/skills/zwiezle
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.copilot/skills/zwiezle/SKILL.md
+```
 
+```bash
 # multilingwista (dialekty)
 mkdir -p ~/.copilot/skills/multilingwista
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.copilot/skills/multilingwista/SKILL.md
@@ -129,7 +131,9 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 # zwiezle (zwięzły polski)
 mkdir -p ~/.opencode/skills/zwiezle
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.opencode/skills/zwiezle/SKILL.md
+```
 
+```bash
 # multilingwista (dialekty)
 mkdir -p ~/.opencode/skills/multilingwista
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.opencode/skills/multilingwista/SKILL.md
@@ -141,7 +145,9 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 # zwiezle (zwięzły polski)
 mkdir -p ~/.claude/skills/zwiezle
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.claude/skills/zwiezle/SKILL.md
+```
 
+```bash
 # multilingwista (dialekty)
 mkdir -p ~/.claude/skills/multilingwista
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.claude/skills/multilingwista/SKILL.md
