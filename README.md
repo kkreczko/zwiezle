@@ -176,9 +176,9 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 
 ---
 
-## ryz — Rice'owanie Linuksa
+## ryż
 
-Specjalizuje się w bezpośredniej zmianie plików konfiguracyjnych. Bez diffów, od razu zmiana i przeładowanie.
+Specjalizuje się w bezpośredniej zmianie plików konfiguracyjnych.
 
 ### Użycie
 
