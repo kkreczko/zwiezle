@@ -9,7 +9,6 @@ Skill znacznie minimalizujący wypowiedzi pomagiera dla oszczędności tokenów,
 | Skill | Tryby | Użycie |
 |-------|-------|--------|
 | **zwiezle** | `polsko` (3 poziomy) | `/zwiezle 2` |
-| **ryz** | rice linuxa | `/ryz zmien font w terminalu` |
 ---
 
 ### Tryby
