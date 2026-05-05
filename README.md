@@ -1,21 +1,19 @@
+# Ogólnie
+
+Zestaw umiejętności do pomagierów komputerowych przeznaczony dla najlepszych programistów na świecie a może nawet i w Polsce.
+
 # Zwięźle
 
-Zestaw umiejętności oszczędzających tokeny przez zwięzły styl odpowiedzi po polsku.
-
-Dwa skille:
+Jedyny prawdziwy i użyteczny skill:
 
 | Skill | Tryby | Użycie |
 |-------|-------|--------|
 | **zwiezle** | `polsko` (3 poziomy) | `/zwiezle 2` |
-| **multilingwista** | `suwalsko`, `kaszebsko`, `godka`, `grypsera`, `sigma`, `staropolsko` (×3) | `/multilingwista sigma 2` |
-
 ---
-
-## zwiezle — Zwięzły polski
 
 ### Tryby
 
-| Poziom | Styl | Oszczędność tokenów |
+| Poziom | Styl | Oszczędność tokenów (na podstawie bullshit benchmarku) |
 |--------|------|---------------------|
 | `1` | Lekko zwięzły — krótsze zdania, bez grzeczności | ~58% |
 | `2` | Telegraficzny — SMS, pkt, zero fillery | ~64% |
@@ -29,7 +27,7 @@ Dwa skille:
 /zwiezle wylacz
 ```
 
-Wystarczy włączyć na początku rozmowy i twój pomagier będzie o wszystkim pamiętać.
+Wystarczy włączyć na początku rozmowy i twój pomagier będzie o wszystkim pamiętać. Oszczędza sporo tokenów, może być przydatne. Silnie inspirowane cavemenem.
 
 ### Przykłady
 
@@ -52,9 +50,33 @@ Normalne: "Aby zainstalować tę zależność, musisz uruchomić następujące p
 poziom 3: "`pip install foo`"
 ```
 
----
+### Instalacja
 
-## multilingwista — Dialekty i gwary
+#### GitHub Copilot (VS Code / CLI)
+
+```bash
+mkdir -p ~/.copilot/skills/zwiezle
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.copilot/skills/zwiezle/SKILL.md
+```
+
+#### OpenCode
+
+```bash
+mkdir -p ~/.opencode/skills/zwiezle
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.opencode/skills/zwiezle/SKILL.md
+```
+
+#### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills/zwiezle
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.claude/skills/zwiezle/SKILL.md
+```
+
+---
+# Reszta umiejętności mniej przydatnych
+
+## multilingwista — Dialekty i gwary Polski
 
 ### Tryby
 
@@ -135,13 +157,6 @@ staropolsko 2: "Kompilacyja nie powiodła się, zaiste. Trza jest dodać dep. `l
 
 ### GitHub Copilot (VS Code / CLI)
 
-**zwiezle** (zwięzły polski):
-
-```bash
-mkdir -p ~/.copilot/skills/zwiezle
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.copilot/skills/zwiezle/SKILL.md
-```
-
 **multilingwista** (dialekty):
 
 ```bash
@@ -151,13 +166,6 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 
 ### OpenCode
 
-**zwiezle** (zwięzły polski):
-
-```bash
-mkdir -p ~/.opencode/skills/zwiezle
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.opencode/skills/zwiezle/SKILL.md
-```
-
 **multilingwista** (dialekty):
 
 ```bash
@@ -166,13 +174,6 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 ```
 
 ### Claude Code
-
-**zwiezle** (zwięzły polski):
-
-```bash
-mkdir -p ~/.claude/skills/zwiezle
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL.md -o ~/.claude/skills/zwiezle/SKILL.md
-```
 
 **multilingwista** (dialekty):
 
