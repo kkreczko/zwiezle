@@ -4,11 +4,12 @@ Zestaw umiejętności do pomagierów komputerowych przeznaczony dla najlepszych 
 
 # Zwięźle
 
-Jedyny prawdziwy i użyteczny skill:
+Skill znacznie minimalizujący wypowiedzi pomagiera dla oszczędności tokenów, minimalizuje również wypowiedzi pomiędzy agentami. Sam w sobie skill również jest mały by oszczędzać kontekst:
 
 | Skill | Tryby | Użycie |
 |-------|-------|--------|
 | **zwiezle** | `polsko` (3 poziomy) | `/zwiezle 2` |
+| **ryz** | rice linuxa | `/ryz zmien font w terminalu` |
 ---
 
 ### Tryby
@@ -74,7 +75,7 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/zwiezle/SKILL
 ```
 
 ---
-# Reszta umiejętności mniej przydatnych
+# Reszta umiejętności
 
 ## multilingwista — Dialekty i gwary Polski
 
@@ -153,9 +154,67 @@ staropolsko 2: "Kompilacyja nie powiodła się, zaiste. Trza jest dodać dep. `l
 
 ---
 
+## ryz — Rice'owanie Linuksa
+
+Specjalizuje się w bezpośredniej zmianie plików konfiguracyjnych. Bez diffów, od razu zmiana i przeładowanie.
+
+### Użycie
+
+```
+/ryz zmień font w terminalu na Fira Code 14
+/ryz dodaj numerowanie okien w tmux od 1
+/ryz ustaw alias ll='ls -la' w bashu
+/ryz zwiększ przezroczystość nieaktywnych okien do 85%
+```
+
+### Przykłady
+
+**zmiana fonta w terminalu:**
+```
+/ryz zmień font w terminalu na Fira Code 14
+→ font_family → Fira Code, font_size → 14 w kitty.conf. Przeładowane.
+```
+
+**numerowanie okien tmux od 1:**
+```
+/ryz dodaj numerowanie okien w tmux od 1
+→ base-index → 1, pane-base-index → 1 w tmux.conf. Przeładowane.
+```
+
+**alias w bashu:**
+```
+/ryz dodaj alias gc='git commit'
+→ alias gc='git commit' dodany do ~/.bashrc.
+```
+
+### Umiejętności
+
+- Shell (bash, zsh, fish) — aliasy, zmienne, prompt
+- Terminal (kitty, alacritty, ghostty, wezterm, foot) — fonty, kolory, przezroczystość
+- tmux — okna, panele, keybinds, status bar
+- Git — globalny config, aliasy, merge tools
+- SSH — hosty, klucze, opcje połączeń
+- Edytory (neovim, vim, helix) — themes, plugins, keybinds
+- GTK/Qt — themes, fonts, ikony
+- Menu/launchery (rofi, wofi, fuzzel) — wygląd, keybinds
+- Compositor (picom) — przezroczystość, cienie, blur
+- Powiadomienia (dunst) — pozycja, timeout, wygląd
+- Prompt (starship, oh-my-posh) — ikony, kolory, moduły
+- System info (fastfetch, neofetch) — co wyświetlać
+- Inne (mpv, btop, sxhkd, zathura) — wg mapy konfigów w SKILL.md
+
+---
+
 ## Instalacja
 
 ### GitHub Copilot (VS Code / CLI)
+
+**ryz** (rice linuxa):
+
+```bash
+mkdir -p ~/.copilot/skills/ryz
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.copilot/skills/ryz/SKILL.md
+```
 
 **multilingwista** (dialekty):
 
@@ -166,6 +225,13 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 
 ### OpenCode
 
+**ryz** (rice linuxa):
+
+```bash
+mkdir -p ~/.opencode/skills/ryz
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.opencode/skills/ryz/SKILL.md
+```
+
 **multilingwista** (dialekty):
 
 ```bash
@@ -174,6 +240,13 @@ curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwist
 ```
 
 ### Claude Code
+
+**ryz** (rice linuxa):
+
+```bash
+mkdir -p ~/.claude/skills/ryz
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.claude/skills/ryz/SKILL.md
+```
 
 **multilingwista** (dialekty):
 
