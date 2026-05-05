@@ -29,6 +29,8 @@ Dwa skille:
 /zwiezle wylacz
 ```
 
+Wystarczy włączyć na początku rozmowy i twój pomagier będzie o wszystkim pamiętać.
+
 ### Przykłady
 
 **poziom 1** — krótko i na temat:
@@ -56,7 +58,7 @@ poziom 3: "`pip install foo`"
 
 ### Tryby
 
-| Tryb + Moc | Styl | Oszczędność |
+| Tryb + Moc | Styl | Oszczędność (źródło: halucynacja)|
 |------------|------|-------------|
 | `suwalsko 1` | Pol + lekkie wtrącenia | ~59% |
 | `suwalsko 2` | Wyraźna gwara | ~56% |
@@ -131,7 +133,7 @@ staropolsko 2: "Kompilacyja nie powiodła się, zaiste. Trza jest dodać dep. `l
 
 ## Instalacja
 
-### GitHub Copilot CLI
+### GitHub Copilot (VS Code / CLI)
 
 **zwiezle** (zwięzły polski):
 
