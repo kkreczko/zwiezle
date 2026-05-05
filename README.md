@@ -152,6 +152,29 @@ Normalne: "Kompilacja nie powiodła się. Trzeba dodać brakującą zależność
 staropolsko 2: "Kompilacyja nie powiodła się, zaiste. Trza jest dodać dep. `libfoo`, bowiem jej omylność wielce szkodzi."
 ```
 
+### Instalacja
+
+#### GitHub Copilot (VS Code / CLI)
+
+```bash
+mkdir -p ~/.copilot/skills/multilingwista
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.copilot/skills/multilingwista/SKILL.md
+```
+
+#### OpenCode
+
+```bash
+mkdir -p ~/.opencode/skills/multilingwista
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.opencode/skills/multilingwista/SKILL.md
+```
+
+#### Claude Code
+
+```bash
+mkdir -p ~/.claude/skills/multilingwista
+curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.claude/skills/multilingwista/SKILL.md
+```
+
 ---
 
 ## ryz — Rice'owanie Linuksa
@@ -203,54 +226,25 @@ Specjalizuje się w bezpośredniej zmianie plików konfiguracyjnych. Bez diffów
 - System info (fastfetch, neofetch) — co wyświetlać
 - Inne (mpv, btop, sxhkd, zathura) — wg mapy konfigów w SKILL.md
 
----
+### Instalacja
 
-## Instalacja
-
-### GitHub Copilot (VS Code / CLI)
-
-**ryz** (rice linuxa):
+#### GitHub Copilot (VS Code / CLI)
 
 ```bash
 mkdir -p ~/.copilot/skills/ryz
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.copilot/skills/ryz/SKILL.md
 ```
 
-**multilingwista** (dialekty):
-
-```bash
-mkdir -p ~/.copilot/skills/multilingwista
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.copilot/skills/multilingwista/SKILL.md
-```
-
-### OpenCode
-
-**ryz** (rice linuxa):
+#### OpenCode
 
 ```bash
 mkdir -p ~/.opencode/skills/ryz
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.opencode/skills/ryz/SKILL.md
 ```
 
-**multilingwista** (dialekty):
-
-```bash
-mkdir -p ~/.opencode/skills/multilingwista
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.opencode/skills/multilingwista/SKILL.md
-```
-
-### Claude Code
-
-**ryz** (rice linuxa):
+#### Claude Code
 
 ```bash
 mkdir -p ~/.claude/skills/ryz
 curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/ryz/SKILL.md -o ~/.claude/skills/ryz/SKILL.md
-```
-
-**multilingwista** (dialekty):
-
-```bash
-mkdir -p ~/.claude/skills/multilingwista
-curl -fsSL https://raw.githubusercontent.com/kkreczko/zwiezle/main/multilingwista/SKILL.md -o ~/.claude/skills/multilingwista/SKILL.md
 ```
